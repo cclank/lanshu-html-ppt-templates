@@ -63,5 +63,17 @@
       "bytes": 218972,
       "sha256": "6e23486f31f50a15a39ff99e0032cb8a43f0e9d5b3c319f60339089921cb29d7"
     }
-  ]
+  ],
+  "readme": {
+    "video_url": "https://github.com/user-attachments/assets/486a9cb5-3202-425f-ac76-7fdc45261ef1",
+    "duration": 24,
+    "width": 1600,
+    "height": 720,
+    "fps": 30,
+    "video_sha256": "7bf367ecd2817579e1174d6cedd3ec4b83ad712d5f1c7cf0e4822dd042cc095a",
+    "video_bytes": 3052204,
+    "gif": "docs/media/lanshu-showcase-v1.gif",
+    "gif_sha256": "1b2986dd72cc821c4a946a70bda0567eb6df06bab03b6af5a4d9486bc582eda1",
+    "gif_bytes": 2885038
+  }
 }

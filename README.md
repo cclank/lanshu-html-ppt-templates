@@ -18,11 +18,20 @@
 
 ## 动态宫格总览
 
-**两组宫格合成一支 24 秒视频**：前 12 秒展示 01—10 套，后 12 秒展示 11—20 套，连续呈现模板真实的转场、SVG/CSS 动画、Canvas 绘制与参数联动。首页使用同一支视频静音循环，可暂停或放大查看。点击下方动图打开 1920×864、30 fps 的完整 MP4。
+**两组宫格，一支 24 秒完整视频。** 前 12 秒展示 01—10 套，后 12 秒展示 11—20 套，呈现真实的转场、图表动画、Canvas 绘制与参数联动。
 
-[![20 套模板 · 24 秒完整动态宫格视频](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.mp4)
+https://github.com/user-attachments/assets/486a9cb5-3202-425f-ac76-7fdc45261ef1
 
-视频和动图独立托管，不计入 Git 仓库与 Skill 下载包。需要完整站点媒体时，可在项目目录运行 `python3 scripts/fetch_previews.py`；工具根据 [preview-media.json](preview-media.json) 校验并下载媒体。直接构建时，首页会引用线上媒体。
+**[观看 1920×864 高清原版 ↗](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.mp4)** · **[在线循环预览 ↗](https://ppt.lanshuagent.com/)**
+
+<details>
+<summary>展开自动播放宫格预览</summary>
+
+[![20 套模板 · 24 秒完整动态宫格预览](docs/media/lanshu-showcase-v1.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.mp4)
+
+</details>
+
+README 内可直接播放完整视频；在线首页支持静音循环与暂停。动图预览随仓库和下载包一起提供；高清站点媒体可通过 `python3 scripts/fetch_previews.py` 按 [preview-media.json](preview-media.json) 校验下载。
 
 ## 设计预览
 
@@ -154,6 +163,7 @@ lanshu-html-ppt-templates/
 ├── LICENSE                  新增代码的 MIT 授权与范围
 ├── catalog.json             20 套模板的元数据和校验值
 ├── agents/openai.yaml       Codex 技能展示信息
+├── docs/media/              README 完整宫格动图预览
 ├── assets/
 │   ├── templates/           20 个完整 HTML 文件
 │   └── thumbs/              20 张封面缩略图

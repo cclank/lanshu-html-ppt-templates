@@ -63,6 +63,8 @@ def main():
     shutil.copy2(ROOT / 'assets/lanshu-mark.svg', dist / 'favicon.svg')
     for name in ('README.md', 'SKILL.md', 'NOTICE.md', 'LICENSE', 'catalog.json'):
         shutil.copy2(ROOT / name, dist / name)
+    if (ROOT / 'docs/media').is_dir():
+        shutil.copytree(ROOT / 'docs/media', dist / 'docs/media')
     if (ROOT / 'preview-media.json').is_file():
         shutil.copy2(ROOT / 'preview-media.json', dist / 'preview-media.json')
     downloads = dist / 'downloads'
