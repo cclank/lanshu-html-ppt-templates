@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "showcase": {
+    "video": "lanshu-templates-showcase-v1.mp4",
+    "duration": 24,
+    "width": 1920,
+    "height": 864,
+    "fps": 30,
+    "audio": false,
+    "chapters": [
+      {
+        "start": 0,
+        "end": 12,
+        "label": "01—10 · 设计与叙事",
+        "templates": [
+          "01-swiss",
+          "02-editorial",
+          "03-aurora",
+          "04-brutalism",
+          "05-luxury",
+          "06-bauhaus",
+          "07-consulting",
+          "08-oriental",
+          "09-organic",
+          "10-masterplan"
+        ]
+      },
+      {
+        "start": 12,
+        "end": 24,
+        "label": "11—20 · 交互与动态",
+        "templates": [
+          "11-morph",
+          "12-generative",
+          "13-cinematic",
+          "14-live-model",
+          "15-kinetic",
+          "16-spatial",
+          "17-terminal",
+          "18-riso",
+          "19-collage",
+          "20-globe"
+        ]
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "lanshu-templates-showcase-v1.mp4",
+      "kind": "video",
+      "bytes": 15463044,
+      "sha256": "98e6b53bcd9b2e3a02348bff61ed69207172f840970a57702283db8b90037702"
+    },
+    {
+      "file": "lanshu-templates-showcase-v1.gif",
+      "kind": "animated-image",
+      "bytes": 6639748,
+      "sha256": "34ffbb495b44eb9f92b619e219c0dc3df40fe5c8175ce49ac18997245cdbe1c7"
+    },
+    {
+      "file": "lanshu-templates-showcase-v1.jpg",
+      "kind": "poster",
+      "bytes": 218972,
+      "sha256": "6e23486f31f50a15a39ff99e0032cb8a43f0e9d5b3c319f60339089921cb29d7"
+    }
+  ]
+}

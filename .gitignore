@@ -1,0 +1,11 @@
+dist/
+site/media/
+.wrangler/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log

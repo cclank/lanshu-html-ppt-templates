@@ -1,0 +1,429 @@
+{
+  "name": "lanshu-html-ppt-templates",
+  "version": "1.0.0",
+  "homepage": "https://ppt.lanshuagent.com/",
+  "author": "Lanshu",
+  "x": "https://x.com/LufzzLiz",
+  "templates": [
+    {
+      "number": 1,
+      "id": "01-swiss",
+      "file": "01-swiss.html",
+      "name": "瑞士国际主义",
+      "english": "Swiss Grid",
+      "category": "classic",
+      "pages": 10,
+      "description": "严谨网格、大字号与红黑对比，适合清晰表达复杂信息",
+      "use_cases": [
+        "设计系统",
+        "商业汇报",
+        "产品说明"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "c8a2ec4dcc7042e94b5fb66a704215e78478453f25f73d52536488c170ad118d",
+      "thumbnail_sha256": "4b8206f4008ce3c52d5661ef27ad67df2893fa4b2b957057898c7596606f7d70"
+    },
+    {
+      "number": 2,
+      "id": "02-editorial",
+      "file": "02-editorial.html",
+      "name": "杂志编辑",
+      "english": "Editorial",
+      "category": "classic",
+      "pages": 12,
+      "description": "衬线标题、编排留白与编辑叙事，呈现内容和审美",
+      "use_cases": [
+        "趋势报告",
+        "品牌故事",
+        "生活方式"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "71dab7d83617ebfea2e3bccf544124337b129bc3e39d3a764f98e31fefda3cd0",
+      "thumbnail_sha256": "04af8a24349e3b807773105b99e9d36d5a6d28c9614e46c3927760d7d68ae612"
+    },
+    {
+      "number": 3,
+      "id": "03-aurora",
+      "file": "03-aurora.html",
+      "name": "暗夜极光",
+      "english": "Dark Aurora",
+      "category": "classic",
+      "pages": 12,
+      "description": "深色舞台、极光粒子与玻璃卡片，突出科技产品",
+      "use_cases": [
+        "AI 产品",
+        "技术发布",
+        "产品发布会"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "4c85f825c6bcaa54fcfc64c31538cc3aecddd113995d45cdf0cfe53bb9b1ff8a",
+      "thumbnail_sha256": "a399ab0686fb544fecb8314cba1b33cc8648dc670851ccb2e40ef0b239fc12cc"
+    },
+    {
+      "number": 4,
+      "id": "04-brutalism",
+      "file": "04-brutalism.html",
+      "name": "新粗野主义",
+      "english": "Neo-Brutalism",
+      "category": "classic",
+      "pages": 12,
+      "description": "高对比色块、粗边框与直接表达，适合有个性的路演",
+      "use_cases": [
+        "融资路演",
+        "创业项目",
+        "年轻品牌"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "913fe003e171ec6095f641ad1658d45a8931ba0678ee18184c962be3e60d51af",
+      "thumbnail_sha256": "4853598f7b23ebeee7309c28e3fb34871b5631d86d59a5c960d9f05d9189437c"
+    },
+    {
+      "number": 5,
+      "id": "05-luxury",
+      "file": "05-luxury.html",
+      "name": "黑金奢华",
+      "english": "Black & Gold",
+      "category": "classic",
+      "pages": 11,
+      "description": "黑金配色、精细装饰与克制排版，营造高端质感",
+      "use_cases": [
+        "高端品牌",
+        "年度展望",
+        "客户提案"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "ea295e94ebb5efc11366168b3938726e1882c05c67c38daa9d1346daaf4c77b1",
+      "thumbnail_sha256": "992be167aa6a8be6acd3f4ac892da1def55a388cf83db5af4bd6ac50d651a737"
+    },
+    {
+      "number": 6,
+      "id": "06-bauhaus",
+      "file": "06-bauhaus.html",
+      "name": "包豪斯",
+      "english": "Bauhaus",
+      "category": "classic",
+      "pages": 11,
+      "description": "几何构成和三原色，用形状组织教学与设计内容",
+      "use_cases": [
+        "设计课程",
+        "工作坊",
+        "创意教育"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "159bd307ce9a26d4634ca8e2e45b5abcbb8ecbec8ad3400c8a026bc094b1813b",
+      "thumbnail_sha256": "03b64d131c5be0304cf7624e18ecd3a44711d5a7f803f79325b131e13840c2c8"
+    },
+    {
+      "number": 7,
+      "id": "07-consulting",
+      "file": "07-consulting.html",
+      "name": "咨询战略",
+      "english": "Consulting",
+      "category": "classic",
+      "pages": 12,
+      "description": "结论式标题、矩阵与结构化图表，承载信息密集的报告",
+      "use_cases": [
+        "战略汇报",
+        "经营分析",
+        "董事会材料"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "02bd16d9e8b4337d95a0e97b1934ab2e1571d333d73cb32873ebae0e53148293",
+      "thumbnail_sha256": "d17e781b44eb57ecd4cd11a7510f47d049213ef7f9dd6fc04518b06e861bf7bb"
+    },
+    {
+      "number": 8,
+      "id": "08-oriental",
+      "file": "08-oriental.html",
+      "name": "新中式",
+      "english": "Oriental",
+      "category": "classic",
+      "pages": 12,
+      "description": "青绿山水、卷轴构图与东方色彩，展开文化叙事",
+      "use_cases": [
+        "文旅策展",
+        "文化项目",
+        "中式品牌"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "626bdeef2795751f618ef23d629c9f7921bc0a503c35ab96d3f5c7ea001b535c",
+      "thumbnail_sha256": "979b5e638a66622b1bcb636e652bf29ed97bd4dc34cc5520f3b084789eae379e"
+    },
+    {
+      "number": 9,
+      "id": "09-organic",
+      "file": "09-organic.html",
+      "name": "北欧自然",
+      "english": "Organic",
+      "category": "classic",
+      "pages": 12,
+      "description": "自然色彩、柔和形状与可持续主题的信息设计",
+      "use_cases": [
+        "ESG 报告",
+        "生活方式",
+        "可持续发展"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "3b2050edec40c716c75a67ed18a5f0cbe52f3774d9a15560705be0d8c2abb4fc",
+      "thumbnail_sha256": "d746c1d70c4908a2ba454e473b06e9f73e635bfc7e82e082b25670bf0d82acec"
+    },
+    {
+      "number": 10,
+      "id": "10-masterplan",
+      "file": "10-masterplan.html",
+      "name": "无限画布",
+      "english": "Infinite Canvas",
+      "category": "lab",
+      "pages": 11,
+      "description": "镜头在城市地图中移动，通过缩放串联战略全景",
+      "use_cases": [
+        "战略全景",
+        "项目规划",
+        "空间叙事"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "18f3d268ed7bd1bc5375afdf6830f144d5333acbc8432b32f172d36b841ea748",
+      "thumbnail_sha256": "71897fc29979b29a795a14b5098946e54391fc62ca4c41f0069a624317ceecfa"
+    },
+    {
+      "number": 11,
+      "id": "11-morph",
+      "file": "11-morph.html",
+      "name": "数据变形叙事",
+      "english": "Morphing Data",
+      "category": "lab",
+      "pages": 10,
+      "description": "同一组 1,000 个点连续变形，让数据变化成为故事",
+      "use_cases": [
+        "数据报告",
+        "人群洞察",
+        "研究分享"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "3eb4d28eb24eea695b1f5a294eea94e3dde13cee4267c094c2144c7067227d6f",
+      "thumbnail_sha256": "b5643be9355102d2afd9aa3bb2b13d0373347d6c1ed0f5f9fdec804ed8f5b5d3"
+    },
+    {
+      "number": 12,
+      "id": "12-generative",
+      "file": "12-generative.html",
+      "name": "生成艺术",
+      "english": "Generative",
+      "category": "lab",
+      "pages": 11,
+      "description": "算法实时绘制背景，以粒子和噪声构成生成式视觉",
+      "use_cases": [
+        "艺术展览",
+        "创意科技",
+        "算法演示"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "b3bbb39082763ef60ddf03df8ec0e904bb211c6129b70c20031e9e64c7cf61e9",
+      "thumbnail_sha256": "3dc9b007056cc9ad9b877a3c83e7cd0aa25b22b0f0a261440a18e7032cb56b0f"
+    },
+    {
+      "number": 13,
+      "id": "13-cinematic",
+      "file": "13-cinematic.html",
+      "name": "电影片头",
+      "english": "Cinematic",
+      "category": "lab",
+      "pages": 12,
+      "description": "宽银幕、胶片颗粒与镜头运动，构成电影式品牌叙事",
+      "use_cases": [
+        "品牌纪录",
+        "活动开场",
+        "故事提案"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "8f5f5e7b2a4aed360960b4923c937e4c40438464bf38dffb972f75ce97b5d016",
+      "thumbnail_sha256": "ea3eb1d4efe83b6b2c9f51d41da4410afbc045f9f96e0187cc289ea5b52866c4"
+    },
+    {
+      "number": 14,
+      "id": "14-live-model",
+      "file": "14-live-model.html",
+      "name": "活体演示",
+      "english": "Live Model",
+      "category": "lab",
+      "pages": 11,
+      "description": "调整业务参数，实时联动现金流、图表与评审结论",
+      "use_cases": [
+        "情景测算",
+        "投资评审",
+        "经营模型"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "6922d635d20a8aa6ef94b009907ddce0b4556e9cc57721f1ed2ea21ea00b321b",
+      "thumbnail_sha256": "3284d7539a4e1b3bab9512b8411103f665a0cc0b7a4038500dc42b9f53444b4e"
+    },
+    {
+      "number": 15,
+      "id": "15-kinetic",
+      "file": "15-kinetic.html",
+      "name": "动态排版",
+      "english": "Kinetic Type",
+      "category": "lab",
+      "pages": 11,
+      "description": "以字重、字宽和文字重组驱动整场演示",
+      "use_cases": [
+        "品牌焕新",
+        "宣言发布",
+        "文字叙事"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "3c88e6a2c61da080d50330dc3133161aca1f2e36f5aba435f36b968927c69645",
+      "thumbnail_sha256": "e9035184316c1c554040761d67acba4bad6e58b1e8b557fc6b0b46201e747e40"
+    },
+    {
+      "number": 16,
+      "id": "16-spatial",
+      "file": "16-spatial.html",
+      "name": "空间界面",
+      "english": "Spatial UI",
+      "category": "lab",
+      "pages": 11,
+      "description": "三维面板、玻璃界面与视差，展示空间产品概念",
+      "use_cases": [
+        "硬件发布",
+        "空间计算",
+        "概念设计"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "645034fe6b9e439c9a6d831c12316f7cd04803e28c3ff7abcda98528adba65ab",
+      "thumbnail_sha256": "4aaae6cb805e5b89fa3aa7b273ab4d17a11668cec54fa6cb7402d21013665d9e"
+    },
+    {
+      "number": 17,
+      "id": "17-terminal",
+      "file": "17-terminal.html",
+      "name": "终端即演示",
+      "english": "Terminal",
+      "category": "lab",
+      "pages": 12,
+      "description": "命令、终端输出与打字动画构成开发者主题演示",
+      "use_cases": [
+        "开发者大会",
+        "开源项目",
+        "技术分享"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "4c38a33035e8c2d6ad377816c3691f103b6e2dc1a95a9dcc057373c54844ef0e",
+      "thumbnail_sha256": "37543dd88608c63f20a6cdd31321cd8c60e0eab73403bed9cd9a025714c5cf31"
+    },
+    {
+      "number": 18,
+      "id": "18-riso",
+      "file": "18-riso.html",
+      "name": "孔版印刷",
+      "english": "Risograph",
+      "category": "lab",
+      "pages": 10,
+      "description": "专色叠印、套色错位与纸张颗粒，保留独立出版质感",
+      "use_cases": [
+        "艺术书展",
+        "独立出版",
+        "文化活动"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "0a8acb7db758c541184ba9a03f57d5d6a64e1e072c665da355862aa72fa38ee0",
+      "thumbnail_sha256": "f1e00c09fb18f706cdd99c0ae24b74fb18a29c9b7349347feca8d4e721bf8120"
+    },
+    {
+      "number": 19,
+      "id": "19-collage",
+      "file": "19-collage.html",
+      "name": "桌面拼贴",
+      "english": "Desk Collage",
+      "category": "lab",
+      "pages": 11,
+      "description": "可拖动的桌面物件和镜头缩放，展开创意提案",
+      "use_cases": [
+        "创意比稿",
+        "营销提案",
+        "产品故事"
+      ],
+      "multi_page_print": false,
+      "overview": false,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "5853d03bf821ac56b3d3bb5f68a23066327adad3f90963b179b4b82a484435d1",
+      "thumbnail_sha256": "08b2a5bba21ade2c43d63b0e041c7849e00f9e9739d494589787b05e9a6dfe13"
+    },
+    {
+      "number": 20,
+      "id": "20-globe",
+      "file": "20-globe.html",
+      "name": "地球仪叙事",
+      "english": "Globe Narrative",
+      "category": "lab",
+      "pages": 12,
+      "description": "点阵地球、航线和昼夜变化串联全球业务故事",
+      "use_cases": [
+        "出海业务",
+        "全球网络",
+        "年度报告"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "f240840eab9aba529aba22d8b81654f67937751fac7fb8d6ac847be89b113f22",
+      "thumbnail_sha256": "d7c1cb5e7c75d7bc05f3acd9bde06fd8838c6110207e2da89ddbc7d7220945e9"
+    }
+  ]
+}
