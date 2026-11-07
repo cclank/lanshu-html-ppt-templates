@@ -1,6 +1,6 @@
 {
   "name": "lanshu-html-ppt-templates",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "20 self-contained HTML presentation templates and a reusable agent skill by Lanshu.",
   "homepage": "https://ppt.lanshuagent.com/",
@@ -12,6 +12,7 @@
     "check": "python3 scripts/check.py",
     "build": "python3 scripts/build_site.py",
     "dev": "python3 scripts/serve.py",
+    "present": "python3 scripts/present.py",
     "deploy": "python3 scripts/deploy.py"
   },
   "engines": { "node": ">=22" }

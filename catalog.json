@@ -1,6 +1,6 @@
 {
   "name": "lanshu-html-ppt-templates",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://ppt.lanshuagent.com/",
   "author": "Lanshu",
   "x": "https://x.com/LufzzLiz",
@@ -23,7 +23,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "c8a2ec4dcc7042e94b5fb66a704215e78478453f25f73d52536488c170ad118d",
+      "sha256": "95e04d6fca7d2462446303344e1a74f1580567803056115a5abaabb569c31a38",
       "thumbnail_sha256": "4b8206f4008ce3c52d5661ef27ad67df2893fa4b2b957057898c7596606f7d70"
     },
     {
@@ -44,7 +44,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "71dab7d83617ebfea2e3bccf544124337b129bc3e39d3a764f98e31fefda3cd0",
+      "sha256": "59c9a33ccb2b29aa20d99f32119fa2fde67a025b0290b0f48b96ab5a5a4133d2",
       "thumbnail_sha256": "04af8a24349e3b807773105b99e9d36d5a6d28c9614e46c3927760d7d68ae612"
     },
     {
@@ -65,7 +65,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "4c85f825c6bcaa54fcfc64c31538cc3aecddd113995d45cdf0cfe53bb9b1ff8a",
+      "sha256": "c5a41c15b5bca49dd7165815404514a2b6a6616f66399fde8e0129aa78b7b3d3",
       "thumbnail_sha256": "a399ab0686fb544fecb8314cba1b33cc8648dc670851ccb2e40ef0b239fc12cc"
     },
     {
@@ -86,7 +86,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "913fe003e171ec6095f641ad1658d45a8931ba0678ee18184c962be3e60d51af",
+      "sha256": "45df97a13ad66d17a27e808d477e339fe5ed66a6336179b841f3f944d372046c",
       "thumbnail_sha256": "4853598f7b23ebeee7309c28e3fb34871b5631d86d59a5c960d9f05d9189437c"
     },
     {
@@ -107,7 +107,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "ea295e94ebb5efc11366168b3938726e1882c05c67c38daa9d1346daaf4c77b1",
+      "sha256": "3cfa26a8b28ab9f6c9f6cd329013ea521a4e13bfaee6b34ce76bb1cf04cf1bc1",
       "thumbnail_sha256": "992be167aa6a8be6acd3f4ac892da1def55a388cf83db5af4bd6ac50d651a737"
     },
     {
@@ -128,7 +128,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "159bd307ce9a26d4634ca8e2e45b5abcbb8ecbec8ad3400c8a026bc094b1813b",
+      "sha256": "dd0025833c5aec85e3ed01ece2152fcea40fbd9e5fc88d34b54b8fb415dcecd3",
       "thumbnail_sha256": "03b64d131c5be0304cf7624e18ecd3a44711d5a7f803f79325b131e13840c2c8"
     },
     {
@@ -149,7 +149,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "02bd16d9e8b4337d95a0e97b1934ab2e1571d333d73cb32873ebae0e53148293",
+      "sha256": "11862aa27a611db16b0e453174ca2c18598820bd730cda3fa440727f01418a28",
       "thumbnail_sha256": "d17e781b44eb57ecd4cd11a7510f47d049213ef7f9dd6fc04518b06e861bf7bb"
     },
     {
@@ -170,7 +170,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "626bdeef2795751f618ef23d629c9f7921bc0a503c35ab96d3f5c7ea001b535c",
+      "sha256": "aab5fbc56234d22d28901e540f99ae1e53b41cd6a88ea409151417e7b4cd9e64",
       "thumbnail_sha256": "979b5e638a66622b1bcb636e652bf29ed97bd4dc34cc5520f3b084789eae379e"
     },
     {
@@ -191,7 +191,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "3b2050edec40c716c75a67ed18a5f0cbe52f3774d9a15560705be0d8c2abb4fc",
+      "sha256": "779c878ac0a881c66feb537fe2e84b801e136ad3fd4c6a906ae872a6d9a671d1",
       "thumbnail_sha256": "d746c1d70c4908a2ba454e473b06e9f73e635bfc7e82e082b25670bf0d82acec"
     },
     {
@@ -209,10 +209,10 @@
         "空间叙事"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "18f3d268ed7bd1bc5375afdf6830f144d5333acbc8432b32f172d36b841ea748",
+      "sha256": "466cac8b0bdaf0daf9a6dcaf2e9e0138b0cce36a77bd05ac37dbc3d9e5e60d8d",
       "thumbnail_sha256": "71897fc29979b29a795a14b5098946e54391fc62ca4c41f0069a624317ceecfa"
     },
     {
@@ -230,10 +230,10 @@
         "研究分享"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "3eb4d28eb24eea695b1f5a294eea94e3dde13cee4267c094c2144c7067227d6f",
+      "sha256": "40b897b2476ca020b207d29328bb4d8b908a8c847e8f282a386bd1cc50751251",
       "thumbnail_sha256": "b5643be9355102d2afd9aa3bb2b13d0373347d6c1ed0f5f9fdec804ed8f5b5d3"
     },
     {
@@ -251,10 +251,10 @@
         "算法演示"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "b3bbb39082763ef60ddf03df8ec0e904bb211c6129b70c20031e9e64c7cf61e9",
+      "sha256": "ec9359ff53d924c94383a574423ab20b21af127e6228eddaafa264945f1936bd",
       "thumbnail_sha256": "3dc9b007056cc9ad9b877a3c83e7cd0aa25b22b0f0a261440a18e7032cb56b0f"
     },
     {
@@ -272,10 +272,10 @@
         "故事提案"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "8f5f5e7b2a4aed360960b4923c937e4c40438464bf38dffb972f75ce97b5d016",
+      "sha256": "3f4e1e1f454a180db99174e0aa8d991407193fca6a092b5699b60c32dfd2578d",
       "thumbnail_sha256": "ea3eb1d4efe83b6b2c9f51d41da4410afbc045f9f96e0187cc289ea5b52866c4"
     },
     {
@@ -296,7 +296,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "6922d635d20a8aa6ef94b009907ddce0b4556e9cc57721f1ed2ea21ea00b321b",
+      "sha256": "bd8b32d6cddd7b7e13f245d5abc4d197cafc5de0106f288188ec3f7d4f96e1f1",
       "thumbnail_sha256": "3284d7539a4e1b3bab9512b8411103f665a0cc0b7a4038500dc42b9f53444b4e"
     },
     {
@@ -317,7 +317,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "3c88e6a2c61da080d50330dc3133161aca1f2e36f5aba435f36b968927c69645",
+      "sha256": "9b2df8a29682021204e2042b1d48a0d1452e92bdf71941a99a2e4dcd283b5bb5",
       "thumbnail_sha256": "e9035184316c1c554040761d67acba4bad6e58b1e8b557fc6b0b46201e747e40"
     },
     {
@@ -335,10 +335,10 @@
         "概念设计"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "645034fe6b9e439c9a6d831c12316f7cd04803e28c3ff7abcda98528adba65ab",
+      "sha256": "92c04e7fa17b2ab122a047bbf586bc3fba4a91ed46927ece4b5f0a3dae877893",
       "thumbnail_sha256": "4aaae6cb805e5b89fa3aa7b273ab4d17a11668cec54fa6cb7402d21013665d9e"
     },
     {
@@ -356,10 +356,10 @@
         "技术分享"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "4c38a33035e8c2d6ad377816c3691f103b6e2dc1a95a9dcc057373c54844ef0e",
+      "sha256": "e91df9c5065909e1e3e6aba45850b3a196209e15827a7a862f31d8fa9629138a",
       "thumbnail_sha256": "37543dd88608c63f20a6cdd31321cd8c60e0eab73403bed9cd9a025714c5cf31"
     },
     {
@@ -380,7 +380,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "0a8acb7db758c541184ba9a03f57d5d6a64e1e072c665da355862aa72fa38ee0",
+      "sha256": "80916d40bd4c59faf42964cddd0b6391dcbfa0b6bd4e09e0e55afaf015bb03c7",
       "thumbnail_sha256": "f1e00c09fb18f706cdd99c0ae24b74fb18a29c9b7349347feca8d4e721bf8120"
     },
     {
@@ -398,10 +398,10 @@
         "产品故事"
       ],
       "multi_page_print": false,
-      "overview": false,
+      "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "5853d03bf821ac56b3d3bb5f68a23066327adad3f90963b179b4b82a484435d1",
+      "sha256": "088c9d76ce1adf664c3975426b87b5364d32781e8edd8a61a210cd34bc46f5eb",
       "thumbnail_sha256": "08b2a5bba21ade2c43d63b0e041c7849e00f9e9739d494589787b05e9a6dfe13"
     },
     {
@@ -422,7 +422,7 @@
       "overview": true,
       "offline": true,
       "presenter_notes": true,
-      "sha256": "f240840eab9aba529aba22d8b81654f67937751fac7fb8d6ac847be89b113f22",
+      "sha256": "83af609a8bd6415a9ff66768300d4a12309beac889de9a67d2a8046027182c88",
       "thumbnail_sha256": "d7c1cb5e7c75d7bc05f3acd9bde06fd8838c6110207e2da89ddbc7d7220945e9"
     }
   ]

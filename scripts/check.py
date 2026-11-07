@@ -15,6 +15,7 @@ def main():
     errors = []
     checked = pages = 0
     templates = data['templates']
+    toolkit = (ROOT / 'assets/toolkit.html').read_text(encoding='utf-8').strip()
     if len(templates) != 20 or len({t['id'] for t in templates}) != 20:
         errors.append('Expected 20 uniquely named templates.')
     for t in templates:
@@ -24,6 +25,8 @@ def main():
             errors.extend(f'{t["id"]}: {e}' for e in report['errors'])
             checked += report['javascript_checked']
             pages += report['pages_from_notes']
+            if toolkit not in file.read_text(encoding='utf-8'):
+                errors.append(f'{t["id"]}: presentation toolkit is missing or outdated; run scripts/inject_toolkit.py.')
             if report['pages_from_notes'] != t['pages']:
                 errors.append(f'{t["id"]}: catalog page count does not match speaker notes.')
             if hashlib.sha256(file.read_bytes()).hexdigest() != t['sha256']:
@@ -54,7 +57,7 @@ def main():
                 errors.append(f'{file.name}: {result.stderr[:1000]}')
         checked += len([s for s in p.scripts if not s['attrs'].get('src')
                         and s['attrs'].get('type') != 'application/ld+json'])
-    for name in ['SKILL.md', 'README.md', 'NOTICE.md', 'LICENSE', 'agents/openai.yaml',
+    for name in ['SKILL.md', 'README.md', 'NOTICE.md', 'LICENSE', 'agents/openai.yaml', 'assets/toolkit.html',
                  'references/template-catalog.md', 'references/authoring.md', 'wrangler.jsonc']:
         if not (ROOT / name).is_file():
             errors.append('Missing ' + name)

@@ -931,6 +931,303 @@ window.deck={go:i=>go(i-1),next,prev,overview};
 "最后提请董事会批准首期 86 亿元投资授权：匈牙利 CKD 基地一期 32 亿、欧洲品牌与渠道 24 亿、泰国基地 21 亿、数字化与组织 9 亿。批准后 90 天内完成五项关键行动，并于 2027 年 2 月董事会汇报匈牙利基地可研结论。",
 "以上是本次汇报的全部内容，感谢各位董事审阅。市场模型、分国别财务预测、竞品对标与基地选址等细节，都在另册提供的 46 页附录中。现在欢迎各位董事提出问题与建议。"
 ]</script>
+<!-- ═══════════════ TOOLKIT v2 · 演示工具包（二十套共用：激光笔 · 画笔批注 · 黑白屏 · 页码跳转 · 总览 · 手机遥控 · 快捷键面板）═══════════════ -->
+<style id="tk-style">
+#tk-ink,#tk-laser{position:fixed;left:0;top:0;z-index:2147483000;pointer-events:none}
+#tk-ink.on{pointer-events:auto;touch-action:none}
+#tk-blank{position:fixed;inset:0;z-index:2147483200;display:none;cursor:none}
+#tk-blank.b{display:block;background:#000}
+#tk-blank.w{display:block;background:#fff}
+.tk-ui{font:500 15px/1.45 system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:#F2F2F4;-webkit-font-smoothing:antialiased;letter-spacing:0;text-transform:none}
+.tk-ui kbd{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 8px;border-radius:7px;background:#2C2D33;border:1px solid #44454D;border-bottom-width:2px;font:600 14px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#F2F2F4}
+.tk-ui code{padding:2px 6px;border-radius:5px;background:#2C2D33;font:500 14px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+#tk-bar{position:fixed;left:50%;bottom:28px;translate:-50% 0;z-index:2147483100;display:none;align-items:center;gap:6px;padding:8px 10px;border-radius:16px;background:rgba(24,24,28,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 44px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.08)}
+#tk-bar.on{display:flex}
+#tk-bar .sw{width:30px;height:30px;padding:0;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer}
+#tk-bar .sw.sel{box-shadow:0 0 0 2px #18181C,0 0 0 4px #F2F2F4}
+#tk-bar i{width:1px;height:24px;margin:0 6px;background:rgba(255,255,255,.16)}
+#tk-bar button.t{height:34px;padding:0 14px;border:0;border-radius:9px;background:transparent;color:#F2F2F4;font:inherit;cursor:pointer}
+#tk-bar button.t:hover{background:rgba(255,255,255,.1)}
+#tk-bar button.t.done{background:#F2F2F4;color:#18181C}
+#tk-jump,#tk-toast{position:fixed;left:50%;top:32px;translate:-50% 0;z-index:2147483250;display:none;padding:12px 20px;border-radius:12px;background:rgba(24,24,28,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 36px rgba(0,0,0,.35);white-space:nowrap}
+#tk-jump b{font:700 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:0 4px}
+#tk-jump span{margin-left:14px;color:#A1A2AB;font-size:14px}
+#tk-help,#tk-rm{position:fixed;inset:0;z-index:2147483300;display:none;place-items:center;padding:24px;background:rgba(8,8,10,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+#tk-help.on,#tk-rm.on{display:grid}
+#tk-help .p,#tk-rm .p{width:min(780px,100%);max-height:100%;overflow:auto;padding:28px 34px 24px;border-radius:20px;background:rgba(24,24,28,.95);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+#tk-help h3,#tk-rm h3{margin:0 0 18px;font-size:20px;font-weight:600}
+#tk-help dl{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;margin:0;align-items:center}
+#tk-help dt{color:#A1A2AB}
+#tk-help dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+#tk-help dd em{font-style:normal;color:#A1A2AB;margin-left:4px}
+#tk-help .x,#tk-rm .x{margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);color:#A1A2AB}
+#tk-help .x b{color:#F2F2F4;font-weight:500}
+#tk-rm .p{width:min(560px,100%);text-align:center}
+#tk-rm .qr{width:264px;margin:4px auto 18px;padding:12px;border-radius:14px;background:#fff}
+#tk-rm .qr img{display:block;width:240px;height:240px}
+#tk-rm .u{margin-top:8px;font:500 15px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#7DD3FC;word-break:break-all}
+#tk-rm .st{margin-top:14px;color:#A1A2AB}
+#tk-rm .st.ok{color:#30D158}
+#tk-rm ol{margin:0 0 0 22px;padding:0;text-align:left;display:grid;gap:10px}
+#tk-rm .lead{margin-bottom:14px;text-align:left}
+#tk-ov{position:fixed;inset:0;z-index:2147483150;display:none;flex-direction:column;overflow:auto;padding:28px 40px 40px;background:rgba(12,12,14,.97)}
+#tk-ov.on{display:flex}
+#tk-ov .hd{display:flex;align-items:baseline;gap:16px;margin-bottom:20px}
+#tk-ov .hd b{font-size:20px;font-weight:600}
+#tk-ov .hd span{color:#A1A2AB}
+#tk-ov .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px 20px}
+#tk-ov .c{display:block;min-width:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;outline:none}
+#tk-ov .f{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#1E1F24;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+#tk-ov .f iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+#tk-ov .ph{position:absolute;inset:0;display:grid;place-items:center;font:600 28px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#4A4B52}
+#tk-ov .t{display:flex;gap:10px;margin-top:10px;color:#C9CAD1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tk-ov .t b{flex:none;font:600 15px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#7B7C85}
+#tk-ov .c.cur .f{box-shadow:0 0 0 3px #F2F2F4}
+#tk-ov .c.sel .f,#tk-ov .c:hover .f{box-shadow:0 0 0 3px #7DD3FC}
+body.tk-laser,body.tk-laser *{cursor:none!important}
+@media print{#tk-ink,#tk-laser,#tk-blank,#tk-bar,#tk-jump,#tk-toast,#tk-help,#tk-rm,#tk-ov,.tk-hk{display:none!important}}
+</style>
+<script>
+(()=>{
+const d=document,Q=location.search;
+/* 总览缩略图实例：入场画完后停掉逐帧绘制，十几个实例同时存在也不耗电。
+   至少等 2.6 秒且画满 150 帧，机器慢、帧率低时会自动多等一会儿 */
+if(/[?&]tk-thumb/.test(Q)){const raf=window.requestAnimationFrame.bind(window),t0=performance.now();let f=0;
+  const tick=()=>{if(++f<150||performance.now()-t0<2600)return raf(tick);
+    window.requestAnimationFrame=()=>0;d.querySelectorAll('video,audio').forEach(v=>v.pause())};raf(tick)}
+/* 演讲者窗口、总览和手机里的预览实例不加载工具包 */
+if(/[?&]presenter-preview/.test(Q))return;
+const b=d.body;
+const mk=(tag,id,cls)=>{const e=d.createElement(tag);if(id)e.id=id;if(cls)e.className=cls;b.appendChild(e);return e};
+const swallow=e=>e.stopPropagation();
+const pad=n=>String(n).padStart(2,'0');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ss=(k,v)=>{try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v)}catch(e){}};
+const dpr=()=>Math.min(2,devicePixelRatio||1);
+const page=()=>{const n=parseInt(location.hash.slice(1),10);return isNaN(n)?1:n};
+const total=()=>(window.deck&&window.deck.n)||d.querySelectorAll('.slide').length||0;
+const goTo=n=>{if(window.deck&&window.deck.go)window.deck.go(n);else location.hash='#'+n};
+/* 版心：与各套的 1920×1080 舞台一致，批注按版心坐标保存，窗口缩放后仍对得上 */
+const box=()=>{const s=Math.min(innerWidth/1920,innerHeight/1080);return{s,x:(innerWidth-1920*s)/2,y:(innerHeight-1080*s)/2}};
+let ovOn=false;
+const overview=()=>ovOn||b.classList.contains('is-overview');
+
+/* ── 讲稿与页标题（总览和手机遥控用）── */
+let NOTES=null;
+const notes=()=>{if(!NOTES){try{NOTES=JSON.parse(d.getElementById('deck-notes').textContent)}catch(e){NOTES=[]}}return NOTES};
+function titles(){const sl=[...d.querySelectorAll('.slide')];
+  return Array.from({length:total()},(_,i)=>{const h=sl[i]&&sl[i].querySelector('h1,h2,h3');let t=h?h.textContent.replace(/\s+/g,' ').trim():'';
+    if(!t)t=(notes()[i]||'').replace(/【[^】]*】/g,'').split(/[。！？；!?;]/).map(s=>s.trim()).find(s=>s.length>=8)||'';
+    return t.length>28?t.slice(0,27)+'…':t})}
+
+/* ── 提示条：在各套原有提示后面补一句 ── */
+const hintEl=d.querySelector('.ui-hint,#hint,.h-hint');
+const deckHint=hintEl?hintEl.textContent.replace(/\s+/g,' ').trim():'';
+if(hintEl){const s=d.createElement('span');s.className='tk-hk';s.style.fontFamily='system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';s.textContent=' · ? 快捷键';hintEl.appendChild(s)}
+const nativeO=/(^|·)\s*O\s/.test(deckHint);
+
+/* ── 小提示 ── */
+const toastEl=mk('div','tk-toast','tk-ui');let toastT;
+function toast(msg){toastEl.textContent=msg;toastEl.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>toastEl.style.display='none',1800)}
+
+/* ── 画布 ── */
+const ink=mk('canvas','tk-ink'),ix=ink.getContext('2d');
+const las=mk('canvas','tk-laser'),lx=las.getContext('2d');
+function size(){const r=dpr();for(const c of [ink,las]){c.width=Math.round(innerWidth*r);c.height=Math.round(innerHeight*r);c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}redraw();drawLaser()}
+
+/* ── 画笔批注：每页各自保存，翻回来还在；刷新页面后清空 ── */
+const COLORS=[['#FF3B30','红'],['#FFCC00','黄'],['#0A84FF','蓝'],['#34C759','绿'],['#FFFFFF','白'],['#111111','黑']];
+const strokes=new Map();
+let drawOn=false,color=COLORS[0][0],cur=null,rcur=null,dirty=0;
+const list=()=>{const k=page();if(!strokes.has(k))strokes.set(k,[]);return strokes.get(k)};
+function path(st){const p=st.pts;ix.strokeStyle=st.c;ix.lineWidth=st.w;ix.beginPath();ix.moveTo(p[0][0],p[0][1]);
+  if(p.length<3)ix.lineTo(p[p.length-1][0]+.01,p[p.length-1][1]);
+  else{for(let i=1;i<p.length-1;i++)ix.quadraticCurveTo(p[i][0],p[i][1],(p[i][0]+p[i+1][0])/2,(p[i][1]+p[i+1][1])/2);ix.lineTo(p[p.length-1][0],p[p.length-1][1])}
+  ix.stroke()}
+function redraw(){dirty=0;const r=dpr(),{s,x,y}=box();ix.setTransform(1,0,0,1,0,0);ix.clearRect(0,0,ink.width,ink.height);
+  if(overview())return;ix.setTransform(r*s,0,0,r*s,r*x,r*y);ix.lineCap=ix.lineJoin='round';
+  for(const st of strokes.get(page())||[])path(st)}
+const later=()=>{if(!dirty)dirty=requestAnimationFrame(redraw)};
+const pos=e=>{const{s,x,y}=box();return[(e.clientX-x)/s,(e.clientY-y)/s]};
+const pen=c=>`url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><circle cx='12' cy='12' r='7' fill='rgba(0,0,0,.35)'/><circle cx='12' cy='12' r='5' fill='${c}' stroke='#fff' stroke-width='1.5'/></svg>`)}") 12 12, crosshair`;
+ink.addEventListener('pointerdown',e=>{if(!drawOn||e.button>0)return;e.preventDefault();e.stopPropagation();ink.setPointerCapture(e.pointerId);cur={c:color,w:6,pts:[pos(e)]};list().push(cur);later()});
+ink.addEventListener('pointermove',e=>{if(!cur)return;for(const c of e.getCoalescedEvents?e.getCoalescedEvents():[e])cur.pts.push(pos(c));later()});
+for(const t of ['pointerup','pointercancel'])ink.addEventListener(t,()=>{cur=null});
+for(const t of ['click','dblclick','mousedown','mouseup','touchstart','touchmove','touchend','contextmenu'])ink.addEventListener(t,swallow);
+
+const bar=mk('div','tk-bar','tk-ui');
+bar.innerHTML=COLORS.map(([c,n])=>`<button class="sw" data-c="${c}" style="background:${c}" title="${n}色" aria-label="${n}色"></button>`).join('')+
+  '<i></i><button class="t" data-a="undo">撤销</button><button class="t" data-a="clear">清空本页</button><button class="t done" data-a="done">完成</button>';
+for(const t of ['click','pointerdown','mousedown','touchstart','touchend','dblclick'])bar.addEventListener(t,swallow);
+bar.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;
+  if(t.dataset.c)setColor(t.dataset.c);else if(t.dataset.a==='undo')undo();else if(t.dataset.a==='clear')clearPage();else setDraw(false)});
+function setColor(c){color=c;bar.querySelectorAll('.sw').forEach(s=>s.classList.toggle('sel',s.dataset.c===c));ink.style.cursor=pen(c)}
+function setDraw(on){if(on===drawOn)return;drawOn=on;if(on)setLaser(false);ink.classList.toggle('on',on);bar.classList.toggle('on',on);
+  if(on){setColor(color);toast('画笔：按住鼠标书写 · C 清除本页 · 再按 D 退出')}else{ink.style.cursor='';cur=null}}
+function undo(){const l=strokes.get(page());if(!l||!l.length)return false;l.pop();later();return true}
+function clearPage(){const l=strokes.get(page());if(!l||!l.length)return false;l.length=0;later();toast('已清除本页批注');return true}
+
+/* ── 激光笔：鼠标或手机遥控 ── */
+let laserOn=false,remoteOn=false,trail=[],last=null,lraf=0,rlT;
+addEventListener('pointermove',e=>{if(!laserOn)return;last=[e.clientX,e.clientY];trail.push([e.clientX,e.clientY,performance.now()]);if(!lraf)lraf=requestAnimationFrame(drawLaser)},{passive:true,capture:true});
+function drawLaser(){lraf=0;const r=dpr(),now=performance.now();lx.setTransform(1,0,0,1,0,0);lx.clearRect(0,0,las.width,las.height);
+  if(!(laserOn||remoteOn)||!last)return;lx.setTransform(r,0,0,r,0,0);
+  trail=trail.filter(p=>now-p[2]<240);lx.lineCap='round';
+  for(let i=1;i<trail.length;i++){const a=trail[i-1],c=trail[i],k=1-(now-c[2])/240;lx.strokeStyle=`rgba(255,45,45,${(.5*k).toFixed(3)})`;lx.lineWidth=2+9*k;lx.beginPath();lx.moveTo(a[0],a[1]);lx.lineTo(c[0],c[1]);lx.stroke()}
+  const[x,y]=last,g=lx.createRadialGradient(x,y,0,x,y,24);
+  g.addColorStop(0,'rgba(255,70,70,.95)');g.addColorStop(.3,'rgba(255,30,30,.5)');g.addColorStop(1,'rgba(255,0,0,0)');
+  lx.fillStyle=g;lx.beginPath();lx.arc(x,y,24,0,7);lx.fill();
+  lx.fillStyle='#FF2D2D';lx.beginPath();lx.arc(x,y,6,0,7);lx.fill();
+  lx.fillStyle='rgba(255,255,255,.9)';lx.beginPath();lx.arc(x,y,2.4,0,7);lx.fill();
+  if(trail.length)lraf=requestAnimationFrame(drawLaser)}
+function setLaser(on){if(on===laserOn)return;laserOn=on;if(on)setDraw(false);b.classList.toggle('tk-laser',on);if(!on&&!remoteOn){trail=[];last=null}drawLaser();
+  if(on)toast('激光笔 · 再按 L 关闭')}
+
+/* ── 黑屏 / 白屏 ── */
+const blank=mk('div','tk-blank');let blankMode='';
+const setBlank=m=>{blankMode=m;blank.className=m};
+blank.addEventListener('click',e=>{e.stopPropagation();setBlank('')});
+for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick'])blank.addEventListener(t,swallow);
+
+/* ── 输入页码跳转 ── */
+const jumpEl=mk('div','tk-jump','tk-ui');let buf='',jumpT;
+function showJump(){clearTimeout(jumpT);if(!buf){jumpEl.style.display='none';return}
+  const n=total(),over=n&&+buf>n;
+  jumpEl.innerHTML=`跳到第<b>${buf}</b>页<span>${over?'共 '+n+' 页':'Enter 确认 · Esc 取消'}</span>`;jumpEl.style.display='block';
+  jumpT=setTimeout(()=>{buf='';showJump()},4000)}
+
+/* ── 总览：自带总览的套用自己的，其余几套用缩略预览拼一张 ── */
+const ov=mk('div','tk-ov','tk-ui');let ovSel=0,ovBuilt=false;
+const cells=()=>[...ov.querySelectorAll('.c')];
+function buildOv(){ovBuilt=true;const n=total(),T=titles(),base=location.href.split('#')[0].split('?')[0];
+  ov.innerHTML=`<div class="hd"><b>总览</b><span>共 ${n} 页 · 点击或用方向键选择，Enter 打开 · Esc 关闭</span></div><div class="g">${
+    T.map((t,i)=>`<button class="c" data-i="${i+1}"><div class="f"><span class="ph">${pad(i+1)}</span></div><div class="t"><b>${pad(i+1)}</b>${esc(t)}</div></button>`).join('')}</div>`;
+  const fs=[...ov.querySelectorAll('.f')];let k=0;
+  const next=()=>{if(k>=fs.length)return;const i=k++,f=d.createElement('iframe');f.tabIndex=-1;f.setAttribute('aria-hidden','true');
+    f.onload=()=>setTimeout(next,200);f.src=base+'?presenter-preview&tk-thumb#'+(i+1);fs[i].appendChild(f)};
+  next()}
+function markOv(){cells().forEach((c,i)=>{c.classList.toggle('sel',i===ovSel);c.classList.toggle('cur',i===page()-1)});const c=cells()[ovSel];if(c)c.scrollIntoView({block:'nearest'})}
+function setOv(on){if(on===ovOn)return;ovOn=on;if(on){setDraw(false);if(!ovBuilt)buildOv();ovSel=page()-1}ov.classList.toggle('on',on);if(on)markOv();redraw()}
+function openOv(i){setOv(false);goTo(i)}
+ov.addEventListener('click',e=>{e.stopPropagation();const c=e.target.closest('.c');if(c)openOv(+c.dataset.i)});
+for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wheel'])ov.addEventListener(t,swallow,{passive:true});
+function ovKey(k){const n=cells().length,cols=getComputedStyle(ov.querySelector('.g')).gridTemplateColumns.split(' ').length;
+  const mv={ArrowRight:1,ArrowLeft:-1,ArrowDown:cols,ArrowUp:-cols}[k];
+  if(mv){ovSel=Math.max(0,Math.min(n-1,ovSel+mv));markOv()}else if(k==='Enter'||k===' ')openOv(ovSel+1);else if(k==='Escape'||k==='o'||k==='O')setOv(false)}
+
+/* ── 手机遥控：由 present.py 本地放映服务打开时可用，按 M 扫码 ── */
+const served=/^https?:$/.test(location.protocol);
+const rm=mk('div','tk-rm','tk-ui');let rmOn=false,rc=null,remotes=0,info=null;
+const api=(p,body)=>fetch('/api/'+p,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()});
+function connect(code){if(rc)return;code=code||ss('tk-rc')||String(100000+Math.floor(Math.random()*900000));ss('tk-rc',code);
+  const es=new EventSource(`/api/s/${code}/events?role=deck`);rc={code,es};
+  es.onopen=()=>pushState(true);
+  es.onmessage=e=>{let m;try{m=JSON.parse(e.data)}catch(_){return}onCmd(m)}}
+function pushState(full){if(!rc)return;const s={page:page(),n:total(),blank:blankMode,deck:location.pathname,title:d.title};
+  if(full){s.notes=notes();s.titles=titles()}api(`s/${rc.code}/state`,s).catch(()=>{})}
+function onCmd(m){switch(m.t){
+  case 'key':d.dispatchEvent(new KeyboardEvent('keydown',{key:m.k,code:m.k,bubbles:true,cancelable:true}));break;
+  case 'go':setOv(false);goTo(m.n);break;
+  case 'blank':setBlank(m.m||'');break;
+  case 'laser':clearTimeout(rlT);
+    if(m.off){remoteOn=false;if(!laserOn){last=null;trail=[]}drawLaser()}
+    else{const{s,x,y}=box(),p=[x+m.x*1920*s,y+m.y*1080*s];remoteOn=true;last=p;trail.push([p[0],p[1],performance.now()]);if(!lraf)lraf=requestAnimationFrame(drawLaser);
+      rlT=setTimeout(()=>onCmd({t:'laser',off:1}),2500)}break;
+  case 'pen':{const pts=(m.pts||[]).map(p=>[p[0]*1920,p[1]*1080]);
+    if(m.a==='down'){rcur={c:m.c||COLORS[0][0],w:6,pts};list().push(rcur)}else if(rcur){rcur.pts.push(...pts);if(m.a==='up')rcur=null}
+    later();break}
+  case 'undo':undo();break;
+  case 'clear':clearPage();break;
+  case 'remote':{const was=remotes;remotes=m.count;
+    if(remotes>was){toast('手机已连接');setRm(false);pushState(true)}else if(!remotes&&was)toast('手机已断开');rmStatus();break}
+}}
+function rmStatus(){const e=d.getElementById('tk-rmst');if(!e)return;e.textContent=remotes?`已连接 ${remotes} 台手机`:'等待手机扫码…';e.classList.toggle('ok',remotes>0)}
+async function renderRm(){
+  rm.innerHTML='<div class="p"><h3>手机遥控</h3><p class="st">正在连接本地放映服务…</p></div>';
+  if(served&&!info)info=await api('info').catch(()=>null);
+  if(!rmOn)return;
+  if(!info){rm.innerHTML=`<div class="p"><h3>手机遥控</h3><p class="lead">手机遥控需要通过随附的本地放映服务打开这份演示：</p><ol>
+    <li>在终端运行 <code>python3 present.py</code>，在模板仓库里是 <code>python3 scripts/present.py</code>；后面可以加上演示文件的路径</li>
+    <li>浏览器会自动打开演示，再按 <kbd>M</kbd>，用手机相机扫码</li></ol>
+    <p class="x">手机和电脑需要连同一个 Wi‑Fi。不用遥控时，直接双击文件即可放映。按任意键关闭</p></div>`;return}
+  connect();
+  const host=info.ips[0]||location.hostname,url=h=>`http://${h}:${info.port}/remote#${rc.code}`;
+  rm.innerHTML=`<div class="p"><h3>手机遥控</h3><div class="qr"><img alt="手机遥控二维码" src="/api/qr.svg?text=${encodeURIComponent(url(host))}"></div>
+    <p>用手机相机扫码打开遥控器，手机和电脑需要连同一个 Wi‑Fi</p><p class="u">${esc(url(host))}</p><p class="st" id="tk-rmst"></p>
+    ${info.ips.length>1?`<p class="x">扫码打不开时，可以在手机浏览器里试试：<br>${info.ips.slice(1).map(h=>esc(url(h))).join('<br>')}</p>`:''}
+    <p class="x">遥控器上可以翻页、看讲稿、跳页、黑屏，也能用激光笔和画笔</p><p class="st">按任意键关闭</p></div>`;
+  rmStatus()}
+function setRm(on){if(on===rmOn)return;rmOn=on;rm.classList.toggle('on',on);if(on)renderRm()}
+rm.addEventListener('click',e=>{e.stopPropagation();setRm(false)});
+for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wheel'])rm.addEventListener(t,swallow,{passive:true});
+/* 刷新或换一套演示后自动恢复配对，手机不用重新扫码 */
+if(served&&ss('tk-rc'))api('info').then(i=>{info=i;connect(ss('tk-rc'))}).catch(()=>{});
+
+/* ── 快捷键面板 ── */
+const help=mk('div','tk-help','tk-ui');let helpOn=false;
+const extra=deckHint.split('·').map(s=>s.trim()).filter(s=>s&&!/^(← →|F |O |S |⌘|\?)/.test(s));
+const K=(...ks)=>ks.map(k=>`<kbd>${k}</kbd>`).join('');
+const rows=[
+  ['翻页',K('←','→')+'<em>或 空格 · PageUp / PageDown · 翻页笔</em>'],
+  ['跳到某页',K('3')+K('Enter')+'<em>输入页码后回车</em>'],
+  ['第一页 / 最后一页',K('Home')+K('End')],
+  ['总览',K('O')],
+  ['全屏',K('F')+'<em>翻页笔的放映键也可以</em>'],
+  ['演讲者视图',K('S')+'<em>另开窗口：备注 · 下一页 · 计时</em>'],
+  ['黑屏 / 白屏',K('B')+K('W')+'<em>再按一下恢复</em>'],
+  ['激光笔',K('L')],
+  ['画笔批注',K('D')+'<em>开关</em>'+K('C')+'<em>清除本页</em>'+K('Ctrl')+K('Z')+'<em>撤销</em>'],
+  ['手机遥控',K('M')+'<em>手机扫码：翻页 · 讲稿 · 激光笔 · 画笔</em>'],
+  ['导出 PDF',K('⌘ / Ctrl')+K('P')],
+];
+help.innerHTML=`<div class="p"><h3>放映快捷键</h3><dl>${rows.map(([a,c])=>`<dt>${a}</dt><dd>${c}</dd>`).join('')}</dl>`+
+  (extra.length?`<p class="x">本套还可以：<b>${extra.join('　·　')}</b></p>`:'')+`<p class="x" style="border:0;padding:0;margin-top:12px">按任意键或点击关闭</p></div>`;
+const setHelp=on=>{helpOn=on;help.classList.toggle('on',on)};
+help.addEventListener('click',e=>{e.stopPropagation();setHelp(false)});
+for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wheel'])help.addEventListener(t,swallow,{passive:true});
+
+/* ── 按键：捕获阶段处理，先于各套自己的翻页逻辑 ── */
+addEventListener('keydown',e=>{
+  const t=e.target;if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;
+  const k=e.key,stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
+  if((e.ctrlKey||e.metaKey)&&!e.altKey&&(k==='z'||k==='Z')){if(undo())stop();return}
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(k==='F5'){stop();if(!d.fullscreenElement)d.documentElement.requestFullscreen?.()?.catch(()=>{});return}
+  if(blankMode){if(k==='Shift')return;stop();if(e.repeat)return;
+    if(k==='b'||k==='B'||k==='.')setBlank(blankMode==='b'?'':'b');else if(k==='w'||k==='W'||k===',')setBlank(blankMode==='w'?'':'w');else setBlank('');return}
+  if(helpOn||rmOn){if(k!=='Shift'){stop();setHelp(false);setRm(false)}return}
+  if(ovOn){if(k!=='Shift'){stop();ovKey(k)}return}
+  if(buf){
+    if(/^[0-9]$/.test(k)){stop();buf=(buf+k).slice(0,3);showJump();return}
+    if(k==='Enter'){stop();const n=total(),v=n?Math.min(n,+buf):+buf;buf='';showJump();if(v>=1)goTo(v);return}
+    if(k==='Backspace'){stop();buf=buf.slice(0,-1);showJump();return}
+    if(k==='Escape'){stop();buf='';showJump();return}
+    buf='';showJump();
+  }
+  if(/^[1-9]$/.test(k)){stop();buf=k;showJump();return}
+  if(e.repeat&&/^[bBwW.,lLdDmM?]$/.test(k)){stop();return}
+  switch(k){
+    case 'b':case 'B':case '.':stop();setBlank('b');return;
+    case 'w':case 'W':case ',':stop();setBlank('w');return;
+    case 'l':case 'L':stop();setLaser(!laserOn);return;
+    case 'd':case 'D':stop();setDraw(!drawOn);return;
+    case 'c':case 'C':if(clearPage())stop();return;
+    case 'm':case 'M':stop();setRm(true);return;
+    case 'o':case 'O':if(!nativeO){stop();setOv(true)}return;
+    case '?':stop();setHelp(true);return;
+    case 'Escape':if(overview())return;if(drawOn){stop();setDraw(false)}else if(laserOn){stop();setLaser(false)}return;
+  }
+},true);
+
+/* 翻页、进出总览时换上对应页的批注；已配对时把页码同步给手机 */
+let state='',sent='';
+setInterval(()=>{if(drawOn&&overview())setDraw(false);const s=page()+'|'+overview();if(s!==state){state=s;cur=null;rcur=null;redraw()}
+  const r=page()+'|'+blankMode;if(rc&&r!==sent){sent=r;pushState(false)}},200);
+addEventListener('resize',size);size();
+window.deckToolkit={laser:setLaser,draw:setDraw,blank:setBlank,help:setHelp,overview:setOv,remote:setRm,clear:clearPage};
+})();
+</script>
+<!-- ═══════════════ END TOOLKIT ═══════════════ -->
 <!-- ═══════════════ PRESENTER v1 · 演讲者模式（按 S 打开；十九套共用）═══════════════ -->
 <script>
 (()=>{
@@ -1013,9 +1310,9 @@ label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute);c
       <div class="pb"><i id="pbar"></i></div><div class="tb"><button id="tp">暂停</button><button id="tr">重置</button></div></div>
   </div>
 </main>
-<footer><div class="nav"><button id="bp">‹ 上一页</button><button class="nx" id="bn">下一页 ›</button></div>
+<footer><div class="nav"><button id="bp">‹ 上一页</button><button class="nx" id="bn">下一页 ›</button><button id="bb">黑屏 B</button></div>
 <label><input type="checkbox" id="pv" checked> 实时预览</label>
-<div class="hint">在本窗口按 ← → / 空格 / PageUp / PageDown 同样控制主屏 · 主屏按 F 全屏</div></footer>
+<div class="hint">在本窗口按 ← → / 空格 / PageUp / PageDown 同样控制主屏 · 主屏按 F 全屏 · B 黑屏</div></footer>
 <div class="closed" id="cl">主窗口已关闭</div>
 <script>
 const O=window.opener,D=O.document,$=id=>document.getElementById(id);
@@ -1050,11 +1347,11 @@ function render(force){
 /* 把按键原样转发给主屏，保留各套自身的翻页逻辑（如先补全动画再翻页） */
 function send(key){D.dispatchEvent(new O.KeyboardEvent('keydown',{key,code:key,bubbles:true,cancelable:true}));setTimeout(()=>render(),60)}
 addEventListener('keydown',e=>{
-  const map={ArrowRight:'ArrowRight',ArrowDown:'ArrowRight',PageDown:'PageDown',' ':'ArrowRight',Enter:'ArrowRight',ArrowLeft:'ArrowLeft',ArrowUp:'ArrowLeft',PageUp:'PageUp',Backspace:'ArrowLeft',Home:'Home',End:'End'};
+  const map={ArrowRight:'ArrowRight',ArrowDown:'ArrowRight',PageDown:'PageDown',' ':'ArrowRight',Enter:'ArrowRight',ArrowLeft:'ArrowLeft',ArrowUp:'ArrowLeft',PageUp:'PageUp',Backspace:'ArrowLeft',Home:'Home',End:'End',b:'b',B:'b','.':'b',w:'w',W:'w',',':'w'};
   if(e.target.tagName==='INPUT')return;
   if(map[e.key]){e.preventDefault();send(map[e.key])}
 });
-$('bn').onclick=()=>send('ArrowRight');$('bp').onclick=()=>send('ArrowLeft');
+$('bn').onclick=()=>send('ArrowRight');$('bb').onclick=()=>send('b');$('bp').onclick=()=>send('ArrowLeft');
 $('pv').checked=store('preview')!=='off';
 $('pv').onchange=()=>{store('preview',$('pv').checked?'on':'off');$('vc').innerHTML='';$('vn').innerHTML='';render(true)};
 let fs=+(store('nfs')||22);const setFs=()=>document.documentElement.style.setProperty('--nfs',fs+'px');setFs();

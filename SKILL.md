@@ -3,7 +3,7 @@ name: lanshu-html-ppt-templates
 description: 基于 20 套岚叔 HTML 演示模板创建、改写和定制演示文稿，支持商务汇报、路演、发布会、数据叙事与交互演示。用户需要 HTML 幻灯片、网页 PPT 或使用这些模板制作演示时使用。
 metadata:
   author: Lanshu
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # 岚叔 HTML 演示模板
@@ -36,7 +36,7 @@ python3 scripts/deck.py inspect /path/to/outputs/presentation.html
 执行前阅读 [references/authoring.md](references/authoring.md)。对选中的 HTML 做定点修改：
 
 1. 根据用户材料建立逐页叙事，再替换标题、正文、图表数据、页眉页脚与品牌。优先复用现有版式，按内容增删页。
-2. 保留播放内核依赖的 ID、class、`data-*`、事件绑定与图表接口；改变页面数量时同步页码、生成数组和备注数量。
+2. 保留播放内核依赖的 ID、class、`data-*`、事件绑定与图表接口，以及 TOOLKIT（放映工具包）和 PRESENTER（演讲者窗口）代码块；改变页面数量时同步页码、生成数组和备注数量。
 3. 更新 `script#deck-notes` 中的 JSON 数组，让备注顺序与实际放映顺序一致。模板样例中的公司、数字、来源文字和联系方式需要替换或删除。
 4. 输出独立 HTML。静态图形优先使用 SVG/CSS，实时图形沿用现有 Canvas；新增资源需内嵌或随演示一同交付。
 
@@ -46,6 +46,7 @@ python3 scripts/deck.py inspect /path/to/outputs/presentation.html
 
 - 普通模板使用 `.slide`；无限画布、电影、空间界面、终端、拼贴各有独立数据结构，具体见作者指南。
 - `14-live-model` 的模型参数、现金流和绑定元素需要一起修改；演讲者预览是独立实例，默认不会同步主屏临时调整的模型参数。
+- 20 套都内置放映工具包：`?` 快捷键面板、`O` 总览、页码加 `Enter` 跳页、`B`/`W` 黑白屏、`L` 激光笔、`D` 画笔批注。用 `python3 scripts/present.py <演示文件>` 打开后按 `M`，可用同一 Wi‑Fi 下的手机扫码遥控。
 - `17-terminal` 是终端外观的网页演示，显示的命令属于页面内容。
 - `12-generative` 每次运行可能得到不同画面；需要可复现结果时固定种子。
 - 当前提供 HTML 与部分模板的浏览器打印 PDF；交互和动画由浏览器播放。需要可编辑 `.pptx` 时明确说明格式差异，再按用户选择另行转换。
@@ -61,4 +62,4 @@ python3 scripts/deck.py validate /path/to/outputs/presentation.html
 
 在可用的浏览器里检查首尾页、关键图表、最长正文、翻页、全屏、演讲者备注和交互；有 PDF 要求时检查实际打印结果。无法运行浏览器时说明已做的静态检查和未验证部分。
 
-交付 HTML 的可用路径、页数和必要的播放说明。用户要求 PDF 时一并交付验证过的 PDF；说明交互状态和动画在导出中的实际表现。
+交付 HTML 的可用路径、页数和必要的播放说明；可提示按 `?` 查看全部快捷键，需要手机遥控时用 `scripts/present.py` 打开。用户要求 PDF 时一并交付验证过的 PDF；说明交互状态和动画在导出中的实际表现。

@@ -7,7 +7,7 @@
 [![New Code License](https://img.shields.io/badge/New_Code-MIT-22C55E?style=flat-square)](LICENSE)
 [![Templates](https://img.shields.io/badge/Templates-20-4C8BF5?style=flat-square)](#模板目录)
 [![Slides](https://img.shields.io/badge/Example_Slides-226-8B5CF6?style=flat-square)](#模板目录)
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.0.0-111827?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.1.0-111827?style=flat-square)](SKILL.md)
 [![HTML5](https://img.shields.io/badge/HTML5-Offline_Ready-E34F26?style=flat-square&logo=html5&logoColor=white)](#直接使用模板)
 [![Cloudflare](https://img.shields.io/badge/Hosted_on-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)](#cloudflare-部署)
 [![Follow Lanshu on X](https://img.shields.io/badge/Follow-%40LufzzLiz-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/LufzzLiz)
@@ -48,7 +48,7 @@ README 内可直接播放完整视频；在线首页支持静音循环与暂停�
 - **20 种完整风格**：9 套经典系列、11 套交互实验，每套 10–12 页，包含正文结构与逐页演讲备注。
 - **单文件交付**：原生 HTML / CSS / JavaScript，字体内嵌。模板播放无需安装依赖、账号、后端或 API 密钥。
 - **更丰富的表达**：SVG 图表、Canvas 数据变形、生成艺术、空间视差、镜头飞行和可调业务模型。
-- **完整放映体验**：1920×1080 画布自适应缩放，支持翻页、全屏、页码定位和演讲者窗口；部分模板支持总览。
+- **完整放映体验**：1920×1080 画布自适应缩放，支持翻页、全屏、页码跳转、总览和演讲者窗口；20 套都内置激光笔、画笔批注、黑白屏和快捷键面板，还能用手机扫码遥控。
 - **Skill 与工具一起交付**：选型目录、创作规则、模板复制、静态校验和安全安装器均包含在完整包中。
 - **可重复构建和部署**：标准库 Python 脚本构建静态站点和 ZIP，Cloudflare Workers Static Assets 托管全部模板。
 
@@ -65,9 +65,25 @@ README 内可直接播放完整视频；在线首页支持静音循环与暂停�
 | 翻页 | `←` / `→`、PageUp / PageDown；模板还支持点击、滚轮或触屏手势 |
 | 全屏 | `F` |
 | 演讲者视图 | `S`，首次使用时允许本页弹窗 |
-| 总览 | `O`；支持情况见目录 |
-| 指定页 | 在文件或网址后加 `#页码`，如 `07-consulting.html#3` |
+| 总览 | `O`，20 套均可用 |
+| 跳到某页 | 输入页码后按 `Enter`；或在文件或网址后加 `#页码`，如 `07-consulting.html#3` |
+| 黑屏 / 白屏 | `B` / `W`，再按一下恢复；翻页笔的黑屏键同样有效 |
+| 激光笔 | `L` |
+| 画笔批注 | `D` 开关，`C` 清除本页，`Ctrl+Z` 撤销；批注按页保留，刷新后清空 |
+| 手机遥控 | `M`，需要通过 `scripts/present.py` 打开，见下文 |
+| 全部快捷键 | `?` |
 | PDF | 对带多页打印样式的模板，使用浏览器打印到 PDF；启用“背景图形”，边距选“无” |
+
+### 手机遥控
+
+用随附的本地放映服务打开演示，就能用手机扫码遥控：翻页、看逐页讲稿、跳页、黑屏，也能在手机上使用激光笔和画笔。只需要 Python 3，不用安装依赖。
+
+```bash
+python3 scripts/present.py                         # 放映 assets/templates 中的全部模板
+python3 scripts/present.py outputs/strategy.html   # 放映自己的演示
+```
+
+浏览器打开演示后按 `M`，用手机相机扫描屏幕上的二维码。手机和电脑需要连同一个 Wi‑Fi；首次运行时如果系统询问，请允许 Python 接受局域网连接。服务运行期间，同一网络中的设备可以访问被放映的文件夹；按 `Ctrl+C` 停止。
 
 ## 安装为 Skill
 
@@ -213,14 +229,15 @@ npm run deploy
 
 - **格式**：当前主要交付 HTML，13 套模板有多页打印样式；可编辑 `.pptx` 需要额外转换。
 - **字体**：内嵌中文字体按原文字符裁剪，新增中文可能回退到系统字体。改稿后需检查字形、换行与溢出。
-- **演讲者预览**：通过独立 iframe 显示当前页和下一页，默认不共享主屏临时调整的参数、随机种子和物件位置。
+- **演讲者预览**：通过独立 iframe 显示当前页和下一页，默认不共享主屏临时调整的参数、随机种子和物件位置。总览缩略图和手机上的预览也是这样的独立实例。
+- **手机遥控**：需要用 `scripts/present.py` 在局域网内提供文件；直接双击或在线网站打开时，按 `M` 只显示使用说明。配对码为 6 位数字，服务停止后失效。
 - **实时模型**：咖啡门店模板展示了可调整假设与联动计算，模型口径和业务结论需要按实际材料校验。
 - **演示数据**：样例中的品牌、数字、研究来源和联系方式需替换为自己的材料；终端模板显示的命令不在网页中执行。
 - **许可**：新增 Skill、脚本、网站与文档按 [MIT](LICENSE) 开源。原始模板、缩略图及内嵌字体等保留各自权利，原始包未提供上游许可证；完整范围见 [NOTICE.md](NOTICE.md)。
 
 ## 维护与反馈
 
-新增风格或修改库内原始模板时，同步更新 `catalog.json`、缩略图、选型目录和备注，运行校验与构建，再检查在线预览。项目附带 GitHub Actions 校验工作流，可在推送和 Pull Request 时检查资源与构建结果。
+新增风格或修改库内原始模板时，同步更新 `catalog.json`、缩略图、选型目录和备注，运行校验与构建，再检查在线预览。放映工具包的源码在 `assets/toolkit.html`，修改后运行 `python3 scripts/inject_toolkit.py` 同步到 20 套模板，再更新 `catalog.json` 中的校验值。项目附带 GitHub Actions 校验工作流，可在推送和 Pull Request 时检查资源与构建结果。
 
 欢迎通过 [Issues](https://github.com/cclank/lanshu-html-ppt-templates/issues) 反馈问题，或提交 Pull Request 改进工具、文档和站点。提交原始素材相关内容时，请附上清楚的来源与许可信息。
 

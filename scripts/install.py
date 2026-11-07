@@ -31,7 +31,8 @@ def main():
         for name in ['assets', 'references', 'agents']:
             shutil.copytree(ROOT / name, staging / name)
         (staging / 'scripts').mkdir()
-        shutil.copy2(ROOT / 'scripts/deck.py', staging / 'scripts/deck.py')
+        for name in ['deck.py', 'present.py']:
+            shutil.copy2(ROOT / 'scripts' / name, staging / 'scripts' / name)
         staging.rename(target)
     except Exception:
         shutil.rmtree(staging)
