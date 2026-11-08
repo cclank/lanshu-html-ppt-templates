@@ -14,7 +14,7 @@
 
 从咨询报告、融资路演到数据变形和实时模型，把内容、设计与交互放进一个 HTML 文件。直接选模板改稿，也可以将整套资源安装为 Skill，让 AI 助手完成选型、内容改写和演示制作。
 
-**[GitHub 源码](https://github.com/cclank/lanshu-html-ppt-templates)** · **[在线浏览全部模板](https://ppt.lanshuagent.com/)** · **[下载完整 Skill 与源码](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261105-single)** · **[使用指南](https://ppt.lanshuagent.com/guide.html)** · **[在 X 关注岚叔](https://x.com/LufzzLiz)**
+**[GitHub 源码](https://github.com/cclank/lanshu-html-ppt-templates)** · **[在线浏览全部模板](https://ppt.lanshuagent.com/)** · **[下载完整 Skill 与源码](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261108-toolkit)** · **[使用指南](https://ppt.lanshuagent.com/guide.html)** · **[在 X 关注岚叔](https://x.com/LufzzLiz)**
 
 ## 动态宫格总览
 
@@ -87,7 +87,7 @@ python3 scripts/present.py outputs/strategy.html   # 放映自己的演示
 
 ## 安装为 Skill
 
-从 GitHub 克隆，或下载并解压 [完整包](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261105-single)。安装需要 Python 3.10+，不需要安装 Python 第三方依赖。
+从 GitHub 克隆，或下载并解压 [完整包](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261108-toolkit)。安装需要 Python 3.10+，不需要安装 Python 第三方依赖。
 
 ```bash
 git clone https://github.com/cclank/lanshu-html-ppt-templates.git
