@@ -16,8 +16,8 @@ def main():
     checked = pages = 0
     templates = data['templates']
     toolkit = (ROOT / 'assets/toolkit.html').read_text(encoding='utf-8').strip()
-    if len(templates) != 25 or len({t['id'] for t in templates}) != 25:
-        errors.append('Expected 25 uniquely named templates.')
+    if len(templates) != 30 or len({t['id'] for t in templates}) != 30:
+        errors.append('Expected 30 uniquely named templates.')
     for t in templates:
         file = ROOT / 'assets/templates' / t['file']
         try:
@@ -38,8 +38,8 @@ def main():
                 errors.append(f'{t["id"]}: thumbnail checksum changed.')
         except (OSError, ValueError) as error:
             errors.append(f'{t["id"]}: {error}')
-    if pages != 282:
-        errors.append(f'Expected 282 total pages, got {pages}.')
+    if pages != 338:
+        errors.append(f'Expected 338 total pages, got {pages}.')
     for file in (ROOT / 'scripts').glob('*.py'):
         try:
             compile(file.read_text(encoding='utf-8'), str(file), 'exec')

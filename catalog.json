@@ -1,6 +1,6 @@
 {
   "name": "lanshu-html-ppt-templates",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "homepage": "https://ppt.lanshuagent.com/",
   "author": "Lanshu",
   "x": "https://x.com/LufzzLiz",
@@ -529,6 +529,111 @@
       "presenter_notes": true,
       "sha256": "a591a85c7150072160cb9682257111795a9cb59784269029c6029718b77b3833",
       "thumbnail_sha256": "d77b7c475714d2b6b77d1f2af1352a5b745530510b8c9464be82484f03d32503"
+    },
+    {
+      "number": 26,
+      "id": "26-newspaper",
+      "file": "26-newspaper.html",
+      "name": "报纸头版",
+      "english": "Broadsheet",
+      "category": "classic",
+      "pages": 11,
+      "description": "套红报头、多栏排版与版画插图，把一年大事做成一份报纸",
+      "use_cases": [
+        "年度大事记",
+        "企业内刊",
+        "新闻发布"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "8188625aaffdd450f9b6a90d4cc806a9d86226108437f8167118a83dec54a585",
+      "thumbnail_sha256": "3fe58f84fdecd4f97590f81f5ef684944bca9d53cb59f63de00a3d66400a123f"
+    },
+    {
+      "number": 27,
+      "id": "27-blueprint",
+      "file": "27-blueprint.html",
+      "name": "蓝图工程",
+      "english": "Blueprint",
+      "category": "classic",
+      "pages": 11,
+      "description": "工程图纸式图框、三视图与零件表，严谨呈现技术方案",
+      "use_cases": [
+        "工程评审",
+        "硬件发布",
+        "技术架构"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "7508b7ea6b4fc7875d561b1d780294375d41817bfe71c178663ddaae0f917fda",
+      "thumbnail_sha256": "ddb98bd3ab149ab2aa62a022e81393cbffacb58debaa3efe1989fd169fb7e21b"
+    },
+    {
+      "number": 28,
+      "id": "28-official",
+      "file": "28-official.html",
+      "name": "政企汇报",
+      "english": "Official Report",
+      "category": "classic",
+      "pages": 12,
+      "description": "深蓝配中国红的规范版式，公文式层级与任务分解表",
+      "use_cases": [
+        "年度工作汇报",
+        "国企述职",
+        "项目汇报"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "53ed629041a58c6772afdc99863080adecf62793e3de5d96e44d18383b96358d",
+      "thumbnail_sha256": "8829b6db12025c7aaf7d89246f0f10c2d11f02ad17805eb692329059a5bf7287"
+    },
+    {
+      "number": 29,
+      "id": "29-metro",
+      "file": "29-metro.html",
+      "name": "地铁线路",
+      "english": "Transit Map",
+      "category": "lab",
+      "pages": 11,
+      "description": "产品线是地铁线、里程碑是车站，翻页时列车开往下一站",
+      "use_cases": [
+        "产品路线图",
+        "战略规划",
+        "项目里程碑"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "5cbcee867b71370707dfa287393ac583d82af7c594eefe6cb110fdc6514aed4b",
+      "thumbnail_sha256": "8ff675e8ce66aca0cb2ce6b630b7f7a615f104a2b19ede143bcd6c7a71cea385"
+    },
+    {
+      "number": 30,
+      "id": "30-comic",
+      "file": "30-comic.html",
+      "name": "漫画分镜",
+      "english": "Comic",
+      "category": "lab",
+      "pages": 11,
+      "description": "分格漫画、对话气泡与拟声词，把用户故事讲得生动",
+      "use_cases": [
+        "用户故事",
+        "品牌故事",
+        "培训案例"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "f65b5b6e838bcb25b325c1995b0bf46c922dee13d94e126e98bff0e6cde87d1a",
+      "thumbnail_sha256": "5e2152821222861589ea63f24d5d49aedc0e44adb3bca3caf259c2403c82caed"
     }
   ]
 }

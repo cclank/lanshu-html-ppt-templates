@@ -1,8 +1,8 @@
 {
   "name": "lanshu-html-ppt-templates",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
-  "description": "25 self-contained HTML presentation templates and a reusable agent skill by Lanshu.",
+  "description": "30 self-contained HTML presentation templates and a reusable agent skill by Lanshu.",
   "homepage": "https://ppt.lanshuagent.com/",
   "repository": { "type": "git", "url": "https://github.com/cclank/lanshu-html-ppt-templates.git" },
   "bugs": { "url": "https://github.com/cclank/lanshu-html-ppt-templates/issues" },
