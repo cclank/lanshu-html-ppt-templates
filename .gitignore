@@ -1,4 +1,5 @@
 dist/
+release/
 site/media/
 .wrangler/
 node_modules/

@@ -1,6 +1,6 @@
 {
   "name": "lanshu-html-ppt-templates",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://ppt.lanshuagent.com/",
   "author": "Lanshu",
   "x": "https://x.com/LufzzLiz",
@@ -424,6 +424,111 @@
       "presenter_notes": true,
       "sha256": "83af609a8bd6415a9ff66768300d4a12309beac889de9a67d2a8046027182c88",
       "thumbnail_sha256": "d7c1cb5e7c75d7bc05f3acd9bde06fd8838c6110207e2da89ddbc7d7220945e9"
+    },
+    {
+      "number": 21,
+      "id": "21-academic",
+      "file": "21-academic.html",
+      "name": "学术答辩",
+      "english": "Academic Defense",
+      "category": "classic",
+      "pages": 12,
+      "description": "论文式衬线排版、章节导航条与图表编号，严谨呈现研究过程与结论",
+      "use_cases": [
+        "毕业答辩",
+        "课题汇报",
+        "学术报告"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "df173c92ad7fd92cbdb9ba21053adb37a5a6dae33ebd4826f7a2947b37521149",
+      "thumbnail_sha256": "d765d8bc5d946b5e051e756641205c1d4ac56108bc9ccc65c76f7e008e86547e"
+    },
+    {
+      "number": 22,
+      "id": "22-bento",
+      "file": "22-bento.html",
+      "name": "便当格",
+      "english": "Bento Grid",
+      "category": "classic",
+      "pages": 11,
+      "description": "大圆角卡片网格与超大数字，产品亮点和年度数据一目了然",
+      "use_cases": [
+        "产品发布",
+        "年度总结",
+        "功能介绍"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "7fa4d9038e57d6da5d2a2009fbe4f49f0b232e87dd7e191605424a3c85da68f1",
+      "thumbnail_sha256": "62f9d23a2fd5fbe05b647d40f274d8cf0ee9c48b22e1c0ba753a8cce59a77ac9"
+    },
+    {
+      "number": 23,
+      "id": "23-chalkboard",
+      "file": "23-chalkboard.html",
+      "name": "黑板课堂",
+      "english": "Chalkboard",
+      "category": "classic",
+      "pages": 11,
+      "description": "粉笔板书、互动演示与课堂练习，把一个知识点讲清楚",
+      "use_cases": [
+        "教学课件",
+        "培训课程",
+        "科普讲座"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "e17e8f9bd3a3d5a9600883865e4ffb87d4c0abd7eb552b7bd516f11b363ae8cf",
+      "thumbnail_sha256": "b8502f7ba82a8258e010d47e79212adc691d08b0b28eb46ee2bc4dead82fadb1"
+    },
+    {
+      "number": 24,
+      "id": "24-chat",
+      "file": "24-chat.html",
+      "name": "对话叙事",
+      "english": "Chat Story",
+      "category": "lab",
+      "pages": 11,
+      "description": "整场演示是一段聊天记录，消息逐条弹出推进故事",
+      "use_cases": [
+        "AI 产品",
+        "客户故事",
+        "用户研究"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "5ed47a36b01b9343690245de18d3241a645515a7a8ec70b022d51f2d7f1c9626",
+      "thumbnail_sha256": "8469355dcb380c6ec9e9fb84905a03a17a81a98602e88b5ac67f902f10e7f28f"
+    },
+    {
+      "number": 25,
+      "id": "25-pixel",
+      "file": "25-pixel.html",
+      "name": "像素闯关",
+      "english": "Pixel Quest",
+      "category": "lab",
+      "pages": 11,
+      "description": "8-bit 像素游戏风，每一页是一关，适合热闹的年度复盘",
+      "use_cases": [
+        "年会",
+        "团队复盘",
+        "游戏行业"
+      ],
+      "multi_page_print": true,
+      "overview": true,
+      "offline": true,
+      "presenter_notes": true,
+      "sha256": "a591a85c7150072160cb9682257111795a9cb59784269029c6029718b77b3833",
+      "thumbnail_sha256": "d77b7c475714d2b6b77d1f2af1352a5b745530510b8c9464be82484f03d32503"
     }
   ]
 }

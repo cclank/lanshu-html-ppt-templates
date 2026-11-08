@@ -1,20 +1,20 @@
 # lanshu-html-ppt-templates
 
-**20 套专业 HTML 演示模板 · 226 页完整示例 · 一个可复用的 AI Skill**
+**25 套专业 HTML 演示模板 · 282 页完整示例 · 一个可复用的 AI Skill**
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-ppt.lanshuagent.com-DDFB75?style=flat-square&logo=cloudflare&logoColor=white)](https://ppt.lanshuagent.com/)
 [![Build](https://github.com/cclank/lanshu-html-ppt-templates/actions/workflows/check.yml/badge.svg)](https://github.com/cclank/lanshu-html-ppt-templates/actions/workflows/check.yml)
 [![New Code License](https://img.shields.io/badge/New_Code-MIT-22C55E?style=flat-square)](LICENSE)
-[![Templates](https://img.shields.io/badge/Templates-20-4C8BF5?style=flat-square)](#模板目录)
-[![Slides](https://img.shields.io/badge/Example_Slides-226-8B5CF6?style=flat-square)](#模板目录)
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.1.0-111827?style=flat-square)](SKILL.md)
+[![Templates](https://img.shields.io/badge/Templates-25-4C8BF5?style=flat-square)](#模板目录)
+[![Slides](https://img.shields.io/badge/Example_Slides-282-8B5CF6?style=flat-square)](#模板目录)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.2.0-111827?style=flat-square)](SKILL.md)
 [![HTML5](https://img.shields.io/badge/HTML5-Offline_Ready-E34F26?style=flat-square&logo=html5&logoColor=white)](#直接使用模板)
 [![Cloudflare](https://img.shields.io/badge/Hosted_on-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)](#cloudflare-部署)
 [![Follow Lanshu on X](https://img.shields.io/badge/Follow-%40LufzzLiz-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/LufzzLiz)
 
 从咨询报告、融资路演到数据变形和实时模型，把内容、设计与交互放进一个 HTML 文件。直接选模板改稿，也可以将整套资源安装为 Skill，让 AI 助手完成选型、内容改写和演示制作。
 
-**[GitHub 源码](https://github.com/cclank/lanshu-html-ppt-templates)** · **[在线浏览全部模板](https://ppt.lanshuagent.com/)** · **[下载完整 Skill 与源码](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261108-toolkit)** · **[使用指南](https://ppt.lanshuagent.com/guide.html)** · **[在 X 关注岚叔](https://x.com/LufzzLiz)**
+**[GitHub 源码](https://github.com/cclank/lanshu-html-ppt-templates)** · **[在线浏览全部模板](https://ppt.lanshuagent.com/)** · **[下载完整 Skill 与源码](https://github.com/cclank/lanshu-html-ppt-templates/releases/latest/download/lanshu-html-ppt-templates.zip)** · **[使用指南](https://ppt.lanshuagent.com/guide.html)** · **[在 X 关注岚叔](https://x.com/LufzzLiz)**
 
 ## 动态宫格总览
 
@@ -42,13 +42,15 @@ README 内可直接播放完整视频；在线首页支持静音循环与暂停�
 | [![咨询战略封面](assets/thumbs/07-consulting.jpg)](https://ppt.lanshuagent.com/07-consulting.html) | [![暗夜极光封面](assets/thumbs/03-aurora.jpg)](https://ppt.lanshuagent.com/03-aurora.html) |
 | **活体演示 · Live Model** | **地球仪叙事 · Globe Narrative** |
 | [![实时模型封面](assets/thumbs/14-live-model.jpg)](https://ppt.lanshuagent.com/14-live-model.html) | [![地球仪封面](assets/thumbs/20-globe.jpg)](https://ppt.lanshuagent.com/20-globe.html) |
+| **便当格 · Bento Grid** | **像素闯关 · Pixel Quest** |
+| [![便当格封面](assets/thumbs/22-bento.jpg)](https://ppt.lanshuagent.com/22-bento.html) | [![像素闯关封面](assets/thumbs/25-pixel.jpg)](https://ppt.lanshuagent.com/25-pixel.html) |
 
 ## 项目亮点
 
-- **20 种完整风格**：9 套经典系列、11 套交互实验，每套 10–12 页，包含正文结构与逐页演讲备注。
+- **25 种完整风格**：12 套经典系列、13 套交互实验，每套 10–12 页，包含正文结构与逐页演讲备注。
 - **单文件交付**：原生 HTML / CSS / JavaScript，字体内嵌。模板播放无需安装依赖、账号、后端或 API 密钥。
 - **更丰富的表达**：SVG 图表、Canvas 数据变形、生成艺术、空间视差、镜头飞行和可调业务模型。
-- **完整放映体验**：1920×1080 画布自适应缩放，支持翻页、全屏、页码跳转、总览和演讲者窗口；20 套都内置激光笔、画笔批注、黑白屏和快捷键面板，还能用手机扫码遥控。
+- **完整放映体验**：1920×1080 画布自适应缩放，支持翻页、全屏、页码跳转、总览和演讲者窗口；25 套都内置激光笔、画笔批注、黑白屏和快捷键面板，还能用手机扫码遥控。
 - **Skill 与工具一起交付**：选型目录、创作规则、模板复制、静态校验和安全安装器均包含在完整包中。
 - **可重复构建和部署**：标准库 Python 脚本构建静态站点和 ZIP，Cloudflare Workers Static Assets 托管全部模板。
 
@@ -65,7 +67,7 @@ README 内可直接播放完整视频；在线首页支持静音循环与暂停�
 | 翻页 | `←` / `→`、PageUp / PageDown；模板还支持点击、滚轮或触屏手势 |
 | 全屏 | `F` |
 | 演讲者视图 | `S`，首次使用时允许本页弹窗 |
-| 总览 | `O`，20 套均可用 |
+| 总览 | `O`，25 套均可用 |
 | 跳到某页 | 输入页码后按 `Enter`；或在文件或网址后加 `#页码`，如 `07-consulting.html#3` |
 | 黑屏 / 白屏 | `B` / `W`，再按一下恢复；翻页笔的黑屏键同样有效 |
 | 激光笔 | `L` |
@@ -87,7 +89,7 @@ python3 scripts/present.py outputs/strategy.html   # 放映自己的演示
 
 ## 安装为 Skill
 
-从 GitHub 克隆，或下载并解压 [完整包](https://ppt.lanshuagent.com/downloads/lanshu-html-ppt-templates.zip?v=20261108-toolkit)。安装需要 Python 3.10+，不需要安装 Python 第三方依赖。
+从 GitHub 克隆，或下载并解压 [完整包](https://github.com/cclank/lanshu-html-ppt-templates/releases/latest/download/lanshu-html-ppt-templates.zip)。安装需要 Python 3.10+，不需要安装 Python 第三方依赖。
 
 ```bash
 git clone https://github.com/cclank/lanshu-html-ppt-templates.git
@@ -166,6 +168,11 @@ python3 scripts/deck.py validate outputs/strategy.html
 | [18-riso](https://ppt.lanshuagent.com/18-riso.html) | 孔版印刷 · Risograph | 10 | 艺术书展 / 独立出版 / 文化活动 | 多页 |
 | [19-collage](https://ppt.lanshuagent.com/19-collage.html) | 桌面拼贴 · Desk Collage | 11 | 创意比稿 / 营销提案 / 产品故事 | 浏览器放映 |
 | [20-globe](https://ppt.lanshuagent.com/20-globe.html) | 地球仪叙事 · Globe Narrative | 12 | 出海业务 / 全球网络 / 年度报告 | 多页 |
+| [21-academic](https://ppt.lanshuagent.com/21-academic.html) | 学术答辩 · Academic Defense | 12 | 毕业答辩 / 课题汇报 / 学术报告 | 多页 |
+| [22-bento](https://ppt.lanshuagent.com/22-bento.html) | 便当格 · Bento Grid | 11 | 产品发布 / 年度总结 / 功能介绍 | 多页 |
+| [23-chalkboard](https://ppt.lanshuagent.com/23-chalkboard.html) | 黑板课堂 · Chalkboard | 11 | 教学课件 / 培训课程 / 科普讲座 | 多页 |
+| [24-chat](https://ppt.lanshuagent.com/24-chat.html) | 对话叙事 · Chat Story | 11 | AI 产品 / 客户故事 / 用户研究 | 多页 |
+| [25-pixel](https://ppt.lanshuagent.com/25-pixel.html) | 像素闯关 · Pixel Quest | 11 | 年会 / 团队复盘 / 游戏行业 | 多页 |
 
 更详细的能力分类见 [模板选型目录](references/template-catalog.md)；可机器读取的数据与原始文件 SHA-256 位于 [catalog.json](catalog.json)。
 
@@ -177,12 +184,12 @@ lanshu-html-ppt-templates/
 ├── README.md                使用、安装与部署说明
 ├── NOTICE.md                来源、字体与素材说明
 ├── LICENSE                  新增代码的 MIT 授权与范围
-├── catalog.json             20 套模板的元数据和校验值
+├── catalog.json             25 套模板的元数据和校验值
 ├── agents/openai.yaml       Codex 技能展示信息
 ├── docs/media/              README 完整宫格动图预览
 ├── assets/
-│   ├── templates/           20 个完整 HTML 文件
-│   └── thumbs/              20 张封面缩略图
+│   ├── templates/           25 个完整 HTML 文件
+│   └── thumbs/              25 张封面缩略图
 ├── references/              模板选型与创作指南
 ├── scripts/                 创建、检查、安装、构建与部署工具
 ├── site/                    在线目录、使用指南和静态站点响应头
@@ -197,12 +204,13 @@ lanshu-html-ppt-templates/
 项目没有运行时 npm 依赖，使用已有的 Python 与 Node 即可运行下列命令，无需 `npm install`。
 
 ```bash
-npm run check    # 检查 20 套资源、页数、备注 JSON 与内联 JS 语法
-npm run build    # 生成 dist/ 静态站点和可下载的完整 ZIP
+npm run check    # 检查 25 套资源、页数、备注 JSON 与内联 JS 语法
+npm run build    # 生成 dist/ 静态站点，并在 release/ 生成完整 ZIP
+npm run release  # 把完整 ZIP 发布为 GitHub Release 附件（需要已登录 gh）
 npm run dev      # 构建后在 http://127.0.0.1:4173 提供本地预览
 ```
 
-构建目录只包含公开站点资源。账号配置、环境文件、缓存、版本库和 node_modules 不进入站点或 ZIP。下载目录提供 [SHA256SUMS.txt](https://ppt.lanshuagent.com/downloads/SHA256SUMS.txt)，可用于检查完整包。
+构建目录只包含公开站点资源。账号配置、环境文件、缓存、版本库和 node_modules 不进入站点或 ZIP。完整包通过 [GitHub Releases](https://github.com/cclank/lanshu-html-ppt-templates/releases/latest) 分发，同目录的 [SHA256SUMS.txt](https://github.com/cclank/lanshu-html-ppt-templates/releases/latest/download/SHA256SUMS.txt) 可用于检查完整包。
 
 静态检查不执行浏览器脚本，也无法证明版式、动画和 PDF 导出正确。内容修改后应检查首尾页、关键图表、最长正文、导航和备注，PDF 另行检查实际成品。
 
@@ -227,7 +235,7 @@ npm run deploy
 
 ## 使用边界
 
-- **格式**：当前主要交付 HTML，13 套模板有多页打印样式；可编辑 `.pptx` 需要额外转换。
+- **格式**：当前主要交付 HTML，18 套模板有多页打印样式；可编辑 `.pptx` 需要额外转换。
 - **字体**：内嵌中文字体按原文字符裁剪，新增中文可能回退到系统字体。改稿后需检查字形、换行与溢出。
 - **演讲者预览**：通过独立 iframe 显示当前页和下一页，默认不共享主屏临时调整的参数、随机种子和物件位置。总览缩略图和手机上的预览也是这样的独立实例。
 - **手机遥控**：需要用 `scripts/present.py` 在局域网内提供文件；直接双击或在线网站打开时，按 `M` 只显示使用说明。配对码为 6 位数字，服务停止后失效。

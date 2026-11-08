@@ -11,7 +11,8 @@ import zipfile
 
 from deck import ROOT, catalog
 
-EXCLUDED = {'dist', '.git', '.wrangler', 'node_modules', '__pycache__', '.DS_Store'}
+RELEASE_URL = 'https://github.com/cclank/lanshu-html-ppt-templates/releases/latest/download/'
+EXCLUDED = {'dist', 'release', '.git', '.wrangler', 'node_modules', '__pycache__', '.DS_Store'}
 
 
 def source_files():
@@ -67,22 +68,26 @@ def main():
         shutil.copytree(ROOT / 'docs/media', dist / 'docs/media')
     if (ROOT / 'preview-media.json').is_file():
         shutil.copy2(ROOT / 'preview-media.json', dist / 'preview-media.json')
-    downloads = dist / 'downloads'
-    downloads.mkdir()
-    bundle = downloads / (data['name'] + '.zip')
+    # The full ZIP outgrew the 25 MiB per-file cap of Workers static assets, so it is built into
+    # release/ and published as a GitHub release asset (scripts/release.py); /downloads/ redirects there.
+    release = ROOT / 'release'
+    if release.is_symlink():
+        raise ValueError('Refusing to write into a symlinked release directory.')
+    release.mkdir(exist_ok=True)
+    bundle = release / (data['name'] + '.zip')
     with zipfile.ZipFile(bundle, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for p in source_files():
             info = zipfile.ZipInfo(data['name'] + '/' + p.relative_to(ROOT).as_posix(), (2026, 11, 4, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             archive.writestr(info, p.read_bytes())
-    if bundle.stat().st_size >= 25 * 1024 * 1024:
-        raise ValueError('The ZIP exceeds the 25 MiB static asset limit; split the distribution.')
     checksum = hashlib.sha256(bundle.read_bytes()).hexdigest()
-    (downloads / 'SHA256SUMS.txt').write_text(f'{checksum}  {bundle.name}\n', encoding='utf-8')
+    (release / 'SHA256SUMS.txt').write_text(f'{checksum}  {bundle.name}\n', encoding='utf-8')
     (dist / 'build.json').write_text(json.dumps({
-        'name': data['name'], 'version': data['version'], 'templates': 20, 'pages': 226,
+        'name': data['name'], 'version': data['version'], 'templates': len(data['templates']),
+        'pages': sum(t['pages'] for t in data['templates']),
         'bundle_sha256': checksum, 'bundle_bytes': bundle.stat().st_size,
+        'bundle_url': RELEASE_URL + bundle.name,
     }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     base = data['homepage'].rstrip('/')
     urls = [base + '/', base + '/guide.html'] + [base + '/' + t['file'] for t in data['templates']]
@@ -90,7 +95,8 @@ def main():
     sitemap += '\n'.join('<url><loc>' + html.escape(u) + '</loc></url>' for u in urls) + '\n</urlset>\n'
     (dist / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (dist / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n', encoding='utf-8')
-    print(json.dumps({'site': str(dist), 'templates': 20, 'pages': 226,
+    print(json.dumps({'site': str(dist), 'bundle': str(bundle), 'templates': len(data['templates']),
+                      'pages': sum(t['pages'] for t in data['templates']),
                       'bundle_mib': round(bundle.stat().st_size / 1024 ** 2, 2), 'sha256': checksum}, indent=2))
     return 0
 
