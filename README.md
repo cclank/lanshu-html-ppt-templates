@@ -18,20 +18,13 @@
 
 ## 动态宫格总览
 
-**两组宫格，一支 24 秒完整视频。** 前 12 秒展示 01—10 套，后 12 秒展示 11—20 套，呈现真实的转场、图表动画、Canvas 绘制与参数联动。
+**两组宫格，一支 24 秒完整视频。** 前 12 秒展示 01—15 套，后 12 秒展示 16—30 套，呈现真实的转场、图表动画、Canvas 绘制与参数联动。
 
-https://github.com/user-attachments/assets/486a9cb5-3202-425f-ac76-7fdc45261ef1
+[![30 套模板 · 24 秒完整动态宫格预览](docs/media/lanshu-showcase-v2.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v2.mp4)
 
-**[观看 1920×864 高清原版 ↗](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.mp4)** · **[在线循环预览 ↗](https://ppt.lanshuagent.com/)**
+**[观看 1920×864 高清视频 ↗](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v2.mp4)** · **[在线循环预览 ↗](https://ppt.lanshuagent.com/)**
 
-<details>
-<summary>展开自动播放宫格预览</summary>
-
-[![20 套模板 · 24 秒完整动态宫格预览](docs/media/lanshu-showcase-v1.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v1.mp4)
-
-</details>
-
-README 内可直接播放完整视频；在线首页支持静音循环与暂停。动图预览随仓库和下载包一起提供；高清站点媒体可通过 `python3 scripts/fetch_previews.py` 按 [preview-media.json](preview-media.json) 校验下载。
+动图预览随仓库和下载包一起提供。在线首页支持静音循环与暂停，鼠标移到模板卡片上还能单独预览每一套。高清视频和 30 段卡片预览不进入版本库，可通过 `python3 scripts/fetch_previews.py` 按 [preview-media.json](preview-media.json) 从站点校验下载；`scripts/deploy.py` 发布前会先执行这一步。
 
 ## 设计预览
 

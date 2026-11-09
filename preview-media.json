@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "showcase": {
-    "video": "lanshu-templates-showcase-v1.mp4",
+    "video": "lanshu-templates-showcase-v2.mp4",
     "duration": 24,
     "width": 1920,
     "height": 864,
@@ -11,7 +11,7 @@
       {
         "start": 0,
         "end": 12,
-        "label": "01—10 · 设计与叙事",
+        "label": "01—15",
         "templates": [
           "01-swiss",
           "02-editorial",
@@ -22,58 +22,249 @@
           "07-consulting",
           "08-oriental",
           "09-organic",
-          "10-masterplan"
+          "10-masterplan",
+          "11-morph",
+          "12-generative",
+          "13-cinematic",
+          "14-live-model",
+          "15-kinetic"
         ]
       },
       {
         "start": 12,
         "end": 24,
-        "label": "11—20 · 交互与动态",
+        "label": "16—30",
         "templates": [
-          "11-morph",
-          "12-generative",
-          "13-cinematic",
-          "14-live-model",
-          "15-kinetic",
           "16-spatial",
           "17-terminal",
           "18-riso",
           "19-collage",
-          "20-globe"
+          "20-globe",
+          "21-academic",
+          "22-bento",
+          "23-chalkboard",
+          "24-chat",
+          "25-pixel",
+          "26-newspaper",
+          "27-blueprint",
+          "28-official",
+          "29-metro",
+          "30-comic"
         ]
       }
     ]
   },
+  "previews": {
+    "pattern": "preview-{id}.mp4",
+    "duration": 12,
+    "width": 640,
+    "height": 360,
+    "fps": 30,
+    "pages": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ]
+  },
   "files": [
     {
-      "file": "lanshu-templates-showcase-v1.mp4",
+      "file": "lanshu-templates-showcase-v2.mp4",
       "kind": "video",
-      "bytes": 15463044,
-      "sha256": "98e6b53bcd9b2e3a02348bff61ed69207172f840970a57702283db8b90037702"
+      "bytes": 7399805,
+      "sha256": "a25ede927476224bb800a8460c2553b5096d06b73027d069ec116537b379c0ef"
     },
     {
-      "file": "lanshu-templates-showcase-v1.gif",
-      "kind": "animated-image",
-      "bytes": 6639748,
-      "sha256": "34ffbb495b44eb9f92b619e219c0dc3df40fe5c8175ce49ac18997245cdbe1c7"
-    },
-    {
-      "file": "lanshu-templates-showcase-v1.jpg",
+      "file": "lanshu-templates-showcase-v2.jpg",
       "kind": "poster",
-      "bytes": 218972,
-      "sha256": "6e23486f31f50a15a39ff99e0032cb8a43f0e9d5b3c319f60339089921cb29d7"
+      "bytes": 206385,
+      "sha256": "ee247879e8a9afbe9371a5df821db646930e6c811526a411154bd2bd7993a53c"
+    },
+    {
+      "file": "preview-01-swiss.mp4",
+      "kind": "hover-preview",
+      "bytes": 249119,
+      "sha256": "bbcbdca873a671c24ce74b7c6b4a83954feffe0916fd039bacdccc54c27d7f31"
+    },
+    {
+      "file": "preview-02-editorial.mp4",
+      "kind": "hover-preview",
+      "bytes": 364162,
+      "sha256": "acec817ddedd6f1c07ad847f30815dd6520e978546b86155c93e8b25889cf6e0"
+    },
+    {
+      "file": "preview-03-aurora.mp4",
+      "kind": "hover-preview",
+      "bytes": 416515,
+      "sha256": "a721b1a3b9d26da502ed503d060f01a7d4675d2e416af604a5e06795416229c7"
+    },
+    {
+      "file": "preview-04-brutalism.mp4",
+      "kind": "hover-preview",
+      "bytes": 433910,
+      "sha256": "52a53516b87089040c22ac64df97c9a3137d1878c62321cc59e58e7eb8d6ceeb"
+    },
+    {
+      "file": "preview-05-luxury.mp4",
+      "kind": "hover-preview",
+      "bytes": 239531,
+      "sha256": "0a6cfb1bd7dca2450392997ccd43a7b5a883bcd813847302d5fd413f17d34e37"
+    },
+    {
+      "file": "preview-06-bauhaus.mp4",
+      "kind": "hover-preview",
+      "bytes": 322867,
+      "sha256": "ab377669617fb5416c5f070a53cbfd7f6be6432d08e9255928e9b8306e776c43"
+    },
+    {
+      "file": "preview-07-consulting.mp4",
+      "kind": "hover-preview",
+      "bytes": 289029,
+      "sha256": "cd3ccb8cd8f4650bac4fc43ce9bca70030435f06cfd82c61af3d019ac96047d5"
+    },
+    {
+      "file": "preview-08-oriental.mp4",
+      "kind": "hover-preview",
+      "bytes": 301055,
+      "sha256": "57713e2eaa5394240084c0ecb695864fe35a979f68c6555316390623372601d5"
+    },
+    {
+      "file": "preview-09-organic.mp4",
+      "kind": "hover-preview",
+      "bytes": 282581,
+      "sha256": "8d3398ba1feceb361ce29233a54194a391c5a1683e3d5620601ff6e74a351927"
+    },
+    {
+      "file": "preview-10-masterplan.mp4",
+      "kind": "hover-preview",
+      "bytes": 805646,
+      "sha256": "e1a6eec0c4695055422714476e322f3104eb0375b08977ac78874dca291e6974"
+    },
+    {
+      "file": "preview-11-morph.mp4",
+      "kind": "hover-preview",
+      "bytes": 1151092,
+      "sha256": "bc46000081598b5aa1456f08477db39d49657cdc4d20b918623bbc5fbc2413b5"
+    },
+    {
+      "file": "preview-12-generative.mp4",
+      "kind": "hover-preview",
+      "bytes": 1059281,
+      "sha256": "d34749024a5306809ad99d3f4ae42c21d8f72178ac3c11518cc7671011f63751"
+    },
+    {
+      "file": "preview-13-cinematic.mp4",
+      "kind": "hover-preview",
+      "bytes": 209220,
+      "sha256": "ceb8dc0271cb5b1516c6f093d71bfda779b173e8d8ae89dc2ba11eac330de131"
+    },
+    {
+      "file": "preview-14-live-model.mp4",
+      "kind": "hover-preview",
+      "bytes": 249040,
+      "sha256": "a4b37e8b4139ec0df030871b4249084e240e71d8a30cbbaff441bba8804b1d58"
+    },
+    {
+      "file": "preview-15-kinetic.mp4",
+      "kind": "hover-preview",
+      "bytes": 325338,
+      "sha256": "9052dde2e80dc70c6049c5baebe87e81162992f6a5ddee79b1a29c67579cc2d8"
+    },
+    {
+      "file": "preview-16-spatial.mp4",
+      "kind": "hover-preview",
+      "bytes": 120617,
+      "sha256": "f049e6ef6c0fa7e3cc6ba09732bfef3c74e4660a1babc211c9057cdb40b6ef10"
+    },
+    {
+      "file": "preview-17-terminal.mp4",
+      "kind": "hover-preview",
+      "bytes": 54970,
+      "sha256": "66063af2fbf94c2f33e818f88302c59fbde22c4e3f5fde94b6814b648438c07c"
+    },
+    {
+      "file": "preview-18-riso.mp4",
+      "kind": "hover-preview",
+      "bytes": 346834,
+      "sha256": "db333552a11428b33ac57904f2f4440c5d8078e3f6f48fa843a70de89a705e26"
+    },
+    {
+      "file": "preview-19-collage.mp4",
+      "kind": "hover-preview",
+      "bytes": 468018,
+      "sha256": "bf76dac594e2adebb0de43e080866352e876e07cf8bbfafacafe4c25b0bc4ef5"
+    },
+    {
+      "file": "preview-20-globe.mp4",
+      "kind": "hover-preview",
+      "bytes": 1123926,
+      "sha256": "2f251801e50361441cd74f2f9019319c0933352a4513269711f8480908d8f08e"
+    },
+    {
+      "file": "preview-21-academic.mp4",
+      "kind": "hover-preview",
+      "bytes": 342423,
+      "sha256": "a27484d9cc4e0b29f419b00348a0dec6d38d6051ff5ad5e8456f948374921616"
+    },
+    {
+      "file": "preview-22-bento.mp4",
+      "kind": "hover-preview",
+      "bytes": 309102,
+      "sha256": "cc4362068e371b9706fe672f196800be2e9b4fe4dfcc875058d7da3d805eeda2"
+    },
+    {
+      "file": "preview-23-chalkboard.mp4",
+      "kind": "hover-preview",
+      "bytes": 421140,
+      "sha256": "8d7a0f5fb3bc7dca9ddd20f3185f3f3d44f35a4d9386de16e05c63668c127147"
+    },
+    {
+      "file": "preview-24-chat.mp4",
+      "kind": "hover-preview",
+      "bytes": 314526,
+      "sha256": "3d88400a0cc1f48f6464bcca2544f6b6f3b157cdbc7e3fc6e52c09bd2f0485ee"
+    },
+    {
+      "file": "preview-25-pixel.mp4",
+      "kind": "hover-preview",
+      "bytes": 399367,
+      "sha256": "2ed2c397279ba69156c382b4f863710ba6020d05e4ec5f0a2bb18270f774005a"
+    },
+    {
+      "file": "preview-26-newspaper.mp4",
+      "kind": "hover-preview",
+      "bytes": 545476,
+      "sha256": "fc42ca85b458eb225211bda990a9d48c75c726115aaf62af9d7c9bebaa6e0f1d"
+    },
+    {
+      "file": "preview-27-blueprint.mp4",
+      "kind": "hover-preview",
+      "bytes": 348888,
+      "sha256": "510b5ae77ec8671995eb43b5107334641b74523f7e5e381d8a49024ed10c907b"
+    },
+    {
+      "file": "preview-28-official.mp4",
+      "kind": "hover-preview",
+      "bytes": 296287,
+      "sha256": "5708961c285365b9113196518d4fdbdbb71bd617066538c46cdb5c491bf1aa8b"
+    },
+    {
+      "file": "preview-29-metro.mp4",
+      "kind": "hover-preview",
+      "bytes": 332099,
+      "sha256": "b1c4139f281d712944bfb4dc39e29778a1d18e5800f9d50e4a70349236bb38dc"
+    },
+    {
+      "file": "preview-30-comic.mp4",
+      "kind": "hover-preview",
+      "bytes": 705305,
+      "sha256": "a001039897f82e661c489478cc60b2420f1dd99070ae290d591ca74047186fd6"
     }
   ],
   "readme": {
-    "video_url": "https://github.com/user-attachments/assets/486a9cb5-3202-425f-ac76-7fdc45261ef1",
-    "duration": 24,
-    "width": 1600,
-    "height": 720,
-    "fps": 30,
-    "video_sha256": "7bf367ecd2817579e1174d6cedd3ec4b83ad712d5f1c7cf0e4822dd042cc095a",
-    "video_bytes": 3052204,
-    "gif": "docs/media/lanshu-showcase-v1.gif",
-    "gif_sha256": "1b2986dd72cc821c4a946a70bda0567eb6df06bab03b6af5a4d9486bc582eda1",
-    "gif_bytes": 2885038
+    "gif": "docs/media/lanshu-showcase-v2.gif",
+    "gif_sha256": "bddbf0e111a741ce8fa612887b0f2ceb2c793fbca07ebbb5a0d660e43b5fc9d9",
+    "gif_bytes": 3778003
   }
 }

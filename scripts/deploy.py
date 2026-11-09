@@ -13,7 +13,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
-    for script in ('build_site.py', 'check.py'):
+    # Showcase and hover-preview media are not in git; restore them first or the deploy drops them.
+    for script in ('fetch_previews.py', 'build_site.py', 'check.py'):
         subprocess.run([sys.executable, str(ROOT / 'scripts' / script)], check=True)
     env = {**os.environ, 'WRANGLER_SEND_METRICS': 'false'}
     command = ['npx', '--yes', 'wrangler@4.148.0', 'deploy', '--config', str(ROOT / 'wrangler.jsonc')]
