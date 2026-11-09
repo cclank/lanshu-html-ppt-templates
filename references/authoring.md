@@ -37,7 +37,7 @@
 
 每个 HTML 的 `style#embedded-fonts` 很大，包含 WOFF2 的 Base64 数据。用 `python3 scripts/deck.py source 07-consulting` 查看带原始行号的精简源码，避免把字体载入模型上下文。这个命令的结果仅供阅读。
 
-中文字体只包含样例使用的字符，替换文本后会按 CSS 的字体栈回退。新增中文较多时可改用 `system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif`，重新检查换行和布局。字体裁剪需要完整字体源，单靠已裁剪的模板字体无法补回缺失字符。
+中文字体只包含样例使用的字符，替换文本后会按 CSS 的字体栈回退。新增中文较多时可改用 `system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif`，重新检查换行和布局。单靠已裁剪的模板字体无法补回缺失字符；联网时运行 `python3 scripts/embed_fonts.py <文件>`，会从 Google Fonts 按页面实际用到的字重新下载并内嵌。字体请求取自内嵌样式注释里的 `css2:` 记录，旧模板则按 `@font-face` 反推；工具包、演讲者窗口和讲稿使用系统字体，不计入裁剪。
 
 修改时保留完整源文件中的内嵌字体，避免把精简显示中的占位符写回 HTML。缩略图在复制演示时可不携带，模板不依赖这些图片。
 
@@ -56,6 +56,7 @@ S 键打开的演讲者窗口使用两个独立 iframe 展示当前页和下一�
 每套模板在演讲者代码块之前有一段 `<!-- TOOLKIT v2 -->` 代码块，提供激光笔、画笔批注、黑白屏、页码跳转、总览补充、快捷键面板和手机遥控。它只通过 `#页码`、`window.deck.go()` 和键盘事件与各引擎协作，不依赖具体版式，改稿时原样保留。
 
 - 源码是 `assets/toolkit.html`。修改后运行 `python3 scripts/inject_toolkit.py`：它会替换每套模板中的旧代码块，并让演讲者窗口转发 B/W 黑屏键。然后更新 `catalog.json` 的 sha256，并在浏览器中检查。
+- `E` 编辑模式：可编辑的是自身带文字、子元素都是行内元素的文字块。保存时读回原文件（本地双击打开时请用户选择原文件），按顺序重放全套替换，再按“所在页 + 标签 + 原文字”把改动落回对应元素，最后写回讲稿、标题和 `:root` 主题色变量；落不回去的脚本生成文字会在保存时提示。
 - 批注按页保存在内存里，刷新后清空，不会进入打印。总览缩略图和手机预览都是 `?presenter-preview` 独立实例；缩略图画完入场后会停止逐帧绘制。
 - `scripts/present.py` 是只用标准库的 HTTP 服务，监听局域网地址。`/remote` 是手机遥控页；演示和手机凭 6 位配对码、经 Server-Sent Events 通信；二维码由脚本在本地生成，不访问外网。直接双击打开的模板没有遥控能力，按 M 只显示使用说明。
 

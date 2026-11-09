@@ -605,7 +605,7 @@ window.deck={go,jump,n:N,next,prev};
 "向北，再出发。这是全片的落点，也是十年之后的新起点，只念这一句，语气平稳而坚定。【停顿】念完留白三到五秒，让画面和字幕停住，不要急着翻页，等现场安静下来再进入致谢。",
 "致谢。感谢240万位同行用户，感谢扎西次仁等八位山地向导，感谢面料实验室、结构设计组和极地测试队，以及9个国家186家门店的1,260位伙伴。片子到此结束，谢谢大家，现在欢迎提问与交流。"
 ]</script>
-<!-- ═══════════════ TOOLKIT v2 · 演示工具包（二十套共用：激光笔 · 画笔批注 · 黑白屏 · 页码跳转 · 总览 · 手机遥控 · 快捷键面板）═══════════════ -->
+<!-- ═══════════════ TOOLKIT v3 · 演示工具包（各套共用：激光笔 · 画笔批注 · 黑白屏 · 页码跳转 · 总览 · 手机遥控 · 编辑换色 · 快捷键面板）═══════════════ -->
 <style id="tk-style">
 #tk-ink,#tk-laser{position:fixed;left:0;top:0;z-index:2147483000;pointer-events:none}
 #tk-ink.on{pointer-events:auto;touch-action:none}
@@ -624,11 +624,12 @@ window.deck={go,jump,n:N,next,prev};
 #tk-bar button.t:hover{background:rgba(255,255,255,.1)}
 #tk-bar button.t.done{background:#F2F2F4;color:#18181C}
 #tk-jump,#tk-toast{position:fixed;left:50%;top:32px;translate:-50% 0;z-index:2147483250;display:none;padding:12px 20px;border-radius:12px;background:rgba(24,24,28,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 36px rgba(0,0,0,.35);white-space:nowrap}
+#tk-toast{max-width:min(900px,90vw);white-space:normal;text-align:center}
 #tk-jump b{font:700 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:0 4px}
 #tk-jump span{margin-left:14px;color:#A1A2AB;font-size:14px}
-#tk-help,#tk-rm{position:fixed;inset:0;z-index:2147483300;display:none;place-items:center;padding:24px;background:rgba(8,8,10,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-#tk-help.on,#tk-rm.on{display:grid}
-#tk-help .p,#tk-rm .p{width:min(780px,100%);max-height:100%;overflow:auto;padding:28px 34px 24px;border-radius:20px;background:rgba(24,24,28,.95);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+#tk-help,#tk-rm,#tk-ed-pick{position:fixed;inset:0;z-index:2147483300;display:none;place-items:center;padding:24px;background:rgba(8,8,10,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+#tk-help.on,#tk-rm.on,#tk-ed-pick.on{display:grid}
+#tk-help .p,#tk-rm .p,#tk-ed-pick .p{width:min(780px,100%);max-height:100%;overflow:auto;padding:28px 34px 24px;border-radius:20px;background:rgba(24,24,28,.95);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
 #tk-help h3,#tk-rm h3{margin:0 0 18px;font-size:20px;font-weight:600}
 #tk-help dl{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;margin:0;align-items:center}
 #tk-help dt{color:#A1A2AB}
@@ -659,7 +660,42 @@ window.deck={go,jump,n:N,next,prev};
 #tk-ov .c.cur .f{box-shadow:0 0 0 3px #F2F2F4}
 #tk-ov .c.sel .f,#tk-ov .c:hover .f{box-shadow:0 0 0 3px #7DD3FC}
 body.tk-laser,body.tk-laser *{cursor:none!important}
-@media print{#tk-ink,#tk-laser,#tk-blank,#tk-bar,#tk-jump,#tk-toast,#tk-help,#tk-rm,#tk-ov,.tk-hk{display:none!important}}
+/* 编辑模式 */
+#tk-ed-bar{position:fixed;left:50%;top:16px;translate:-50% 0;z-index:2147483120;display:none;align-items:center;gap:4px;padding:6px 8px 6px 16px;border-radius:14px;background:rgba(24,24,28,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 44px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.08);white-space:nowrap}
+#tk-ed-bar.on{display:flex}
+#tk-ed-bar b{margin-right:8px;font-weight:600}
+#tk-ed-bar i{width:1px;height:22px;margin:0 6px;background:rgba(255,255,255,.16)}
+#tk-ed-bar button,#tk-ed-panel button,#tk-ed-pick button{height:34px;padding:0 12px;border:0;border-radius:9px;background:transparent;color:#F2F2F4;font:inherit;cursor:pointer}
+#tk-ed-bar button:hover,#tk-ed-panel button:hover,#tk-ed-pick button:hover{background:rgba(255,255,255,.1)}
+#tk-ed-bar button.on{background:rgba(255,255,255,.16)}
+#tk-ed-bar button.pri,#tk-ed-panel button.pri,#tk-ed-pick button.pri{background:#0A84FF;color:#fff}
+#tk-ed-pg{min-width:72px;text-align:center;font:600 15px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#A1A2AB}
+#tk-ed-panel{position:fixed;top:72px;right:16px;bottom:16px;z-index:2147483110;width:380px;display:none;flex-direction:column;gap:14px;overflow:auto;padding:20px;border-radius:16px;background:rgba(24,24,28,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+#tk-ed-panel.on{display:flex}
+#tk-ed-panel section{display:flex;flex-direction:column;gap:12px}
+#tk-ed-panel section[hidden]{display:none}
+#tk-ed-panel h4{margin:6px 0 0;font-size:16px;font-weight:600}
+#tk-ed-panel label{display:flex;flex-direction:column;gap:6px;color:#A1A2AB}
+#tk-ed-panel textarea,#tk-ed-panel input[type=text]{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #3A3B42;border-radius:9px;background:#1B1C20;color:#F2F2F4;font:15px/1.6 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;resize:vertical}
+#tk-ed-panel textarea{min-height:180px}
+#tk-ed-panel .row,#tk-ed-pick .row{display:flex;gap:8px;align-items:center}
+#tk-ed-pick .row{justify-content:center;margin-top:18px}
+#tk-ed-panel .tip{margin:0;color:#A1A2AB;font-size:14px}
+#tk-ed-panel .warn{margin:0;padding:10px 12px;border-radius:9px;background:rgba(255,204,0,.12);color:#FFD60A;font-size:14px}
+#tk-ed-panel .cv{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center}
+#tk-ed-panel .cv input{width:40px;height:34px;padding:0;border:1px solid #3A3B42;border-radius:8px;background:none;cursor:pointer}
+#tk-ed-panel .cv code{background:none;padding:0;color:#C9CAD1}
+#tk-ed-panel .cv code:last-child{color:#7B7C85}
+#tk-ed-pick .p{width:min(560px,100%)}
+#tk-ed-pick .lead{text-align:left}
+body.tk-editing [data-tk-ed]{cursor:text}
+body.tk-editing [data-tk-ed]:hover{outline:2px dashed rgba(10,132,255,.75);outline-offset:3px}
+body.tk-editing [data-tk-ed]:focus{outline:2px solid #0A84FF;outline-offset:3px}
+body.tk-editing [data-tk-dirty]:not(:focus){outline:2px dotted rgba(52,199,89,.9);outline-offset:3px}
+body.tk-editing.idle,body.tk-editing.idle *{cursor:auto!important}
+body.tk-editing.idle [data-tk-ed]{cursor:text!important}
+body.tk-editing #tk-toast,body.tk-editing #tk-jump{top:76px}
+@media print{#tk-ink,#tk-laser,#tk-blank,#tk-bar,#tk-jump,#tk-toast,#tk-help,#tk-rm,#tk-ov,#tk-ed-bar,#tk-ed-panel,#tk-ed-pick,.tk-hk{display:none!important}body.tk-editing [data-tk-ed]{outline:none!important}}
 </style>
 <script>
 (()=>{
@@ -702,7 +738,7 @@ const nativeO=/(^|·)\s*O\s/.test(deckHint);
 
 /* ── 小提示 ── */
 const toastEl=mk('div','tk-toast','tk-ui');let toastT;
-function toast(msg){toastEl.textContent=msg;toastEl.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>toastEl.style.display='none',1800)}
+function toast(msg,ms=1800){toastEl.textContent=msg;toastEl.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>toastEl.style.display='none',ms)}
 
 /* ── 画布 ── */
 const ink=mk('canvas','tk-ink'),ix=ink.getContext('2d');
@@ -837,6 +873,139 @@ for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wh
 /* 刷新或换一套演示后自动恢复配对，手机不用重新扫码 */
 if(served&&ss('tk-rc'))api('info').then(i=>{info=i;connect(ss('tk-rc'))}).catch(()=>{});
 
+/* ── 编辑模式：点文字直接改、改讲稿和标题、全套替换、调主题色，另存为新文件 ──
+   保存时不序列化当前页面（脚本已经改过它），而是读回原文件，把这些修改落到原文件上 */
+const INLINE=new Set(['B','I','EM','STRONG','SPAN','SMALL','SUP','SUB','BR','A','MARK','U','S','CODE','KBD','Q','ABBR','TIME','WBR','DEL','INS','LABEL']);
+const stageEl=d.querySelector('.stage')||b,$e=id=>d.getElementById(id),norm=s=>s.replace(/\s+/g,' ').trim();
+let edOn=false,edMarked=null,edMap=new Map(),edOps=[],edVars={},edDirty=false,edPanel=null,VARS=null,RANGES=null;
+const fileName=()=>decodeURIComponent(location.pathname.split('/').pop()||'presentation.html');
+function syncNotes(){const P=window.deckPresenter&&window.deckPresenter.notes,N=notes();if(P&&P!==N)N.forEach((v,i)=>{P[i]=v})}
+/* 可编辑的是"文字块"：自己带文字、子元素都是行内元素的最外层元素 */
+function markEditable(){if(edMarked)return;edMarked=[];const seen=new Map(),sl=[...d.querySelectorAll('.slide')];
+  const ok=el=>{if(el.closest('script,style,textarea,select,[data-pg],[data-total]'))return false;let t=false;
+    for(const n of el.childNodes){if(n.nodeType===3&&n.textContent.trim())t=true;else if(n.nodeType===1&&!INLINE.has(n.tagName))return false}return t};
+  const walk=el=>{for(const c of el.children){if(/^tk-/.test(c.id)||c.tagName.toLowerCase()==='svg')continue;
+    if(ok(c)){const s=c.closest('.slide'),k=s?sl.indexOf(s):-1,text=norm(c.textContent),key=k+'|'+c.tagName+'|'+text,occ=seen.get(key)||0;seen.set(key,occ+1);
+      const m={el:c,k,tag:c.tagName,text,occ,src:c.innerHTML,html:null};edMarked.push(m);edMap.set(c,m);c.dataset.tkEd=''}else walk(c)}};
+  walk(stageEl)}
+stageEl.addEventListener('input',e=>{const el=e.target.closest&&e.target.closest('[data-tk-ed]'),m=el&&edMap.get(el);if(!m)return;
+  m.html=el.innerHTML;m.now=el.textContent;el.dataset.tkDirty='';edDirty=true;fontCheck()});
+stageEl.addEventListener('paste',e=>{const el=edOn&&e.target.closest&&e.target.closest('[data-tk-ed]');if(!el||el.contentEditable==='plaintext-only')return;
+  e.preventDefault();d.execCommand('insertText',false,e.clipboardData.getData('text/plain'))});
+/* 编辑时页面上的点击和拖动不交给各套的翻页、拖拽逻辑 */
+for(const t of ['click','pointerdown','mousedown','touchstart','touchend','dblclick','contextmenu'])addEventListener(t,e=>{
+  if(!edOn)return;const x=e.target;if(!x||!x.closest||x.closest('[id^="tk-"]'))return;e.stopPropagation();if(t==='click'&&x.closest('a'))e.preventDefault()},true);
+addEventListener('beforeunload',e=>{if(edDirty){e.preventDefault();e.returnValue=''}});
+
+const edBar=mk('div','tk-ed-bar','tk-ui');
+edBar.innerHTML='<b>✎ 编辑模式</b><button data-a="prev" aria-label="上一页">‹</button><span id="tk-ed-pg"></span><button data-a="next" aria-label="下一页">›</button><i></i>'+
+  '<button data-a="text">文字与讲稿</button><button data-a="color">配色</button><i></i><button data-a="save" class="pri">保存为新文件</button><button data-a="done">完成</button>';
+const edP=mk('div','tk-ed-panel','tk-ui');
+edP.innerHTML=`<section data-p="text" hidden><h4>文字与讲稿</h4><p class="tip">点击页面上带虚线框的文字即可直接修改。图表数字、动画文字等由脚本生成的内容，请用下面的“全套替换”。</p>
+  <label>本页讲稿<textarea id="tk-ed-note"></textarea></label><label>演示标题（浏览器标签上显示）<input type="text" id="tk-ed-title"></label>
+  <h4>全套替换</h4><input type="text" id="tk-ed-find" placeholder="查找，例如样例里的公司名"><input type="text" id="tk-ed-rep" placeholder="替换为">
+  <div class="row"><button class="pri" data-a="replace">全部替换</button><span class="tip" id="tk-ed-rpn"></span></div></section>
+  <section data-p="color" hidden><h4>配色</h4><p class="tip">调整这套模板定义的主题色，实时生效。少数直接写在图形或脚本里的颜色不受影响。</p><div id="tk-ed-vars"></div>
+  <div class="row"><button data-a="reset">恢复默认配色</button></div></section><p class="warn" id="tk-ed-font" hidden></p>`;
+const edPick=mk('div','tk-ed-pick','tk-ui');
+for(const el of [edBar,edP,edPick])for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wheel'])el.addEventListener(t,swallow,{passive:true});
+const edPg=()=>{const e=$e('tk-ed-pg');if(e)e.textContent=pad(page())+' / '+pad(total())};
+function setPanel(p){edPanel=p;edP.classList.toggle('on',!!p);edP.querySelectorAll('section').forEach(s=>{s.hidden=s.dataset.p!==p});
+  edBar.querySelectorAll('[data-a=text],[data-a=color]').forEach(x=>x.classList.toggle('on',x.dataset.a===p));if(p==='text')fillText();if(p==='color')fillVars()}
+function fillText(){const ta=$e('tk-ed-note'),ti=$e('tk-ed-title');if(d.activeElement!==ta)ta.value=notes()[page()-1]||'';if(d.activeElement!==ti)ti.value=d.title}
+function setEd(on){if(on===edOn)return;
+  if(on&&b.classList.contains('is-overview')){toast('请先按 Esc 退出总览');return}
+  if(on){setOv(false);setDraw(false);setLaser(false);markEditable();for(const m of edMarked){try{m.el.contentEditable='plaintext-only'}catch(e){m.el.contentEditable='true'}}}
+  else{for(const m of edMarked||[])m.el.removeAttribute('contenteditable');const a=d.activeElement;if(a&&a.blur)a.blur();setPanel(null)}
+  edOn=on;b.classList.toggle('tk-editing',on);edBar.classList.toggle('on',on);edPg();
+  if(on)toast('编辑模式：点击虚线框里的文字直接修改，改完点「保存为新文件」',3200)}
+edBar.addEventListener('click',e=>{e.stopPropagation();const t=e.target.closest('button');if(!t)return;const a=t.dataset.a;
+  if(a==='prev'||a==='next')d.dispatchEvent(new KeyboardEvent('keydown',{key:a==='next'?'ArrowRight':'ArrowLeft',bubbles:true,cancelable:true}));
+  else if(a==='text'||a==='color')setPanel(edPanel===a?null:a);else if(a==='save')edSave();else setEd(false)});
+edP.addEventListener('input',e=>{const t=e.target;
+  if(t.id==='tk-ed-note'){notes()[page()-1]=t.value;syncNotes();edDirty=true}
+  else if(t.id==='tk-ed-title'){d.title=t.value;edDirty=true}
+  else if(t.type==='color'){d.documentElement.style.setProperty(t.dataset.v,t.value);edVars[t.dataset.v]=t.value;t.parentElement.lastElementChild.textContent=t.value;edDirty=true}});
+edP.addEventListener('change',e=>{if(e.target.id==='tk-ed-note')pushState(true)});
+edP.addEventListener('click',e=>{e.stopPropagation();const t=e.target.closest('button');if(!t)return;
+  if(t.dataset.a==='replace'){const f=$e('tk-ed-find').value,r=$e('tk-ed-rep').value;if(!f)return;const n=replaceLive(f,r);
+    $e('tk-ed-rpn').textContent=n?`替换了 ${n} 处`:'没有找到';if(n){edDirty=true;fillText();pushState(true);fontCheck()}}
+  else if(t.dataset.a==='reset'){for(const v in edVars)d.documentElement.style.removeProperty(v);edVars={};fillVars()}});
+function replaceLive(f,r){let n=0;const sub=s=>{const k=s.split(f).length-1;n+=k;return k?s.split(f).join(r):s};
+  const w=d.createTreeWalker(stageEl,NodeFilter.SHOW_TEXT),ns=[];let t;while(t=w.nextNode())ns.push(t);
+  for(const t of ns){const p=t.parentElement;if(p&&!p.closest('script,style,[id^="tk-"]')&&t.data.includes(f))t.data=sub(t.data)}
+  const N=notes();N.forEach((s,i)=>{if(s.includes(f))N[i]=sub(s)});syncNotes();if(d.title.includes(f))d.title=sub(d.title);
+  for(const m of edMarked||[])if(m.html!==null){m.html=m.el.innerHTML;m.now=m.el.textContent}
+  edOps.push([f,r]);return n}
+/* 主题色：模板在 :root 里定义的颜色变量 */
+function hex(v){const m=v.match(/^#([0-9a-f]{3,8})$/i);if(m){let h=m[1];if(h.length===4||h.length===8)return null;if(h.length===3)h=[...h].map(c=>c+c).join('');return '#'+h.toLowerCase()}
+  const r=v.match(/^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*(?:[,/]\s*([\d.]+)\s*)?\)$/i);
+  return r&&(r[4]===undefined||+r[4]>=1)?'#'+[r[1],r[2],r[3]].map(x=>(+x).toString(16).padStart(2,'0')).join(''):null}
+function themeVars(){if(VARS)return VARS;VARS=[];const seen=new Set();
+  for(const sh of d.styleSheets){const o=sh.ownerNode;if(o&&/^(embedded-fonts|tk-style)$/.test(o.id))continue;let rs;try{rs=sh.cssRules}catch(e){continue}
+    for(const r of rs){if(r.selectorText!==':root'||!r.style)continue;
+      for(let i=0;i<r.style.length;i++){const n=r.style[i];if(!n.startsWith('--')||seen.has(n))continue;const h=hex(r.style.getPropertyValue(n).trim());if(h){seen.add(n);VARS.push([n,h])}}}}
+  return VARS}
+function fillVars(){const V=themeVars();$e('tk-ed-vars').innerHTML=V.length?V.map(([n,h])=>{const c=edVars[n]||h;
+  return `<div class="cv"><input type="color" value="${c}" data-v="${esc(n)}" aria-label="${esc(n)}"><code>${esc(n)}</code><code>${c}</code></div>`}).join(''):'<p class="tip">这套模板没有用 CSS 变量定义主题色。</p>'}
+/* 新写的字是否在内嵌字体的字符范围里 */
+function ranges(){if(RANGES)return RANGES;RANGES=[];
+  for(const sh of d.styleSheets){let rs;try{rs=sh.cssRules}catch(e){continue}
+    for(const r of rs){if(!(r instanceof CSSFontFaceRule))continue;const ur=r.style.getPropertyValue('unicode-range');if(!ur){RANGES.push([0,0x10FFFF]);continue}
+      for(const p of ur.split(',')){const m=p.trim().match(/^U\+([0-9A-F?]+)(?:-([0-9A-F]+))?$/i);if(!m)continue;
+        RANGES.push([parseInt(m[1].replace(/\?/g,'0'),16),m[2]?parseInt(m[2],16):parseInt(m[1].replace(/\?/g,'F'),16)])}}}
+  return RANGES}
+function fontCheck(){const R=ranges(),miss=new Set(),chk=s=>{for(const c of s||''){const cp=c.codePointAt(0);if(cp>0x7f&&/\S/.test(c)&&!R.some(([a,z])=>cp>=a&&cp<=z))miss.add(c)}};
+  for(const m of edMarked||[])if(m.html!==null)chk(m.now);for(const[,r]of edOps)chk(r);
+  const w=$e('tk-ed-font');w.hidden=!miss.size;if(miss.size)w.textContent=`有 ${miss.size} 个新字不在内嵌字体里，会用系统字体显示：${[...miss].slice(0,24).join('')}${miss.size>24?'…':''}。`+
+    '联网时对保存后的文件运行 python3 embed_fonts.py 文件名.html 可以补全（模板仓库里在 scripts/ 目录）。'}
+/* 保存：读回原文件 → 按顺序重放全套替换 → 落下直接改过的文字 → 写回讲稿、标题和主题色 */
+function askFile(){return new Promise(res=>{let done=false;const fin=v=>{if(done)return;done=true;edPick.classList.remove('on');res(v)};
+  edPick.innerHTML=`<div class="p"><h3>选择原文件</h3><p class="lead">浏览器不允许网页直接读取电脑上的文件。请选择这份演示的原文件 <code>${esc(fileName())}</code>，修改会在它的基础上另存为新文件，原文件不会改动。</p>
+    <div class="row"><button class="pri" data-a="pick">选择文件</button><button data-a="cancel">取消</button></div><input type="file" accept=".html,.htm,text/html" hidden></div>`;
+  const inp=edPick.querySelector('input');edPick.classList.add('on');
+  edPick.onclick=e=>{e.stopPropagation();const a=e.target.closest('button');if(!a)return;if(a.dataset.a==='pick')inp.click();else fin(null)};
+  inp.onchange=()=>{const f=inp.files[0];if(!f)return fin(null);f.text().then(fin,()=>fin(null))}})}
+async function edSave(){const a=d.activeElement;if(a&&a.blur)a.blur();
+  let src=null;for(const u of [location.pathname,location.href.split('#')[0]]){if(src)break;try{const r=await fetch(u,{cache:'no-store'});if(r.ok)src=await r.text()}catch(e){}}
+  if(!src||!src.includes('deck-notes'))src=await askFile();if(!src)return;
+  const doc=new DOMParser().parseFromString(src,'text/html');
+  if(!doc.getElementById('deck-notes')||doc.querySelectorAll('.slide').length!==d.querySelectorAll('.slide').length){
+    if(!confirm('选的文件看起来不是这份演示的原文件，仍然继续吗？'))return}
+  /* 脚本和 data-* 属性里只替换含中文等非 ASCII 的词，且替换内容不含引号等会破坏代码的字符；工具包和演讲者代码不动。
+     跳过的处数记下来提示用户 */
+  const safe=!/[`'"\\$<]/.test(edOps.map(o=>o[1]).join('')),skipped=new Map(),cnt=(s,f)=>s.split(f).length-1;
+  for(const[f,r]of edOps){const deep=safe&&/[^\x00-\x7f]/.test(f),skip=n=>skipped.set(f,(skipped.get(f)||0)+n);
+    const w=doc.createTreeWalker(doc.documentElement,NodeFilter.SHOW_TEXT),ns=[];let t;while(t=w.nextNode())ns.push(t);
+    for(const t of ns){const p=t.parentElement;if(!p||!t.data.includes(f)||p.closest('style,title'))continue;
+      if(p.tagName==='SCRIPT'){if(p.id==='deck-notes'||/deckToolkit|PRESENTER_HTML/.test(t.data))continue;if(!deep){skip(cnt(t.data,f));continue}}
+      t.data=t.data.split(f).join(r)}
+    for(const el of doc.body.querySelectorAll('*'))for(const at of [...el.attributes]){if(!at.value.includes(f))continue;
+      if(/^(title|alt|aria-label|placeholder)$/.test(at.name)||(deep&&at.name.startsWith('data-')))el.setAttribute(at.name,at.value.split(f).join(r));
+      else if(at.name.startsWith('data-'))skip(cnt(at.value,f))}}
+  /* 原文件里这个元素现在应有的文字：和上面一样逐个文字节点重放替换（跨 <br> 等标签的词不会被换） */
+  /* 对不上时退一步只比自身的文字节点（里面嵌的计数器等运行时才填的小元素不算），唯一匹配才采用 */
+  const own=el=>norm([...el.childNodes].filter(n=>n.nodeType===3).map(n=>n.data).join(' '));
+  const expect=m=>{const t=d.createElement('template');t.innerHTML=m.src;const w=d.createTreeWalker(t.content,NodeFilter.SHOW_TEXT),ns=[];let x;while(x=w.nextNode())ns.push(x);
+    for(const[f,r]of edOps)for(const n of ns)if(n.data.includes(f))n.data=n.data.split(f).join(r);return[norm(t.content.textContent),own(t.content)]};
+  const S=[...doc.querySelectorAll('.slide')],lost=[];
+  for(const m of edMarked||[]){if(m.html===null)continue;const scope=m.k>=0&&S[m.k]?S[m.k]:doc.body,[want,wown]=expect(m),all=[...scope.getElementsByTagName(m.tag)];
+    let c=all.filter(x=>norm(x.textContent)===want),tg=c[m.occ]||(c.length===1?c[0]:null);
+    if(!tg&&wown.length>=2){c=all.filter(x=>own(x)===wown);if(c.length===1)tg=c[0]}
+    if(!tg){lost.push(norm(m.now).slice(0,14));continue}
+    tg.innerHTML=m.html;
+    if(tg.hasAttribute('data-to')){const v=parseFloat(m.now.replace(/[^\d.\-]/g,''));if(!isNaN(v))tg.setAttribute('data-to',String(v))}}
+  const nj=doc.getElementById('deck-notes');if(nj)nj.textContent='[\n'+notes().map(s=>JSON.stringify(s)).join(',\n')+'\n]';
+  doc.title=d.title;
+  for(const[v,h]of Object.entries(edVars)){const re=new RegExp('('+v.replace(/[.*+?^${}()|[\]\\-]/g,'\\$&')+'\\s*:\\s*)([^;}]+)');
+    for(const st of doc.querySelectorAll('style')){if(/^(embedded-fonts|tk-style)$/.test(st.id)||!re.test(st.textContent))continue;st.textContent=st.textContent.replace(re,'$1'+h);break}}
+  const name=fileName().replace(/(（已编辑）)?\.html?$/i,'')+'（已编辑）.html',link=d.createElement('a');
+  link.href=URL.createObjectURL(new Blob(['<!doctype html>\n'+doc.documentElement.outerHTML+'\n'],{type:'text/html;charset=utf-8'}));
+  link.download=name;link.id='tk-download';b.appendChild(link);link.click();setTimeout(()=>{URL.revokeObjectURL(link.href);link.remove()},4000);
+  const notes2=[];if(lost.length)notes2.push(`有 ${lost.length} 处脚本生成的文字没能保存：${lost.join('、')}，请改用全套替换`);
+  for(const[f,n]of skipped)notes2.push(`「${f}」在脚本生成的内容里还有 ${n} 处没替换（为避免改坏代码），需要的话请在源码里替换`);
+  edDirty=false;toast(`已另存为「${name}」`+(notes2.length?'。'+notes2.join('；'):''),notes2.length?9000:3000)}
+
 /* ── 快捷键面板 ── */
 const help=mk('div','tk-help','tk-ui');let helpOn=false;
 const extra=deckHint.split('·').map(s=>s.trim()).filter(s=>s&&!/^(← →|F |O |S |⌘|\?)/.test(s));
@@ -852,6 +1021,7 @@ const rows=[
   ['激光笔',K('L')],
   ['画笔批注',K('D')+'<em>开关</em>'+K('C')+'<em>清除本页</em>'+K('Ctrl')+K('Z')+'<em>撤销</em>'],
   ['手机遥控',K('M')+'<em>手机扫码：翻页 · 讲稿 · 激光笔 · 画笔</em>'],
+  ['编辑与换色',K('E')+'<em>直接改文字和讲稿 · 全套替换 · 换主题色，另存为新文件</em>'],
   ['导出 PDF',K('⌘ / Ctrl')+K('P')],
 ];
 help.innerHTML=`<div class="p"><h3>放映快捷键</h3><dl>${rows.map(([a,c])=>`<dt>${a}</dt><dd>${c}</dd>`).join('')}</dl>`+
@@ -862,10 +1032,14 @@ for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wh
 
 /* ── 按键：捕获阶段处理，先于各套自己的翻页逻辑 ── */
 addEventListener('keydown',e=>{
-  const t=e.target;if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;
-  const k=e.key,stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
+  const t=e.target,k=e.key,stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
+  if(edOn&&(e.ctrlKey||e.metaKey)&&!e.altKey&&(k==='s'||k==='S')){stop();edSave();return}
+  if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))){
+    /* 改文字、填面板时按键只给输入框，不让各套拿去翻页 */
+    if(edOn||(t.closest&&t.closest('[id^="tk-"]'))){if(k==='Escape'&&t.blur)t.blur();e.stopImmediatePropagation()}return}
   if((e.ctrlKey||e.metaKey)&&!e.altKey&&(k==='z'||k==='Z')){if(undo())stop();return}
   if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(edOn){if(k==='e'||k==='E'||k==='Escape'){stop();setEd(false)}else if(/^[oObBwWlLdDmMcC?0-9]$/.test(k))stop();return}
   if(k==='F5'){stop();if(!d.fullscreenElement)d.documentElement.requestFullscreen?.()?.catch(()=>{});return}
   if(blankMode){if(k==='Shift')return;stop();if(e.repeat)return;
     if(k==='b'||k==='B'||k==='.')setBlank(blankMode==='b'?'':'b');else if(k==='w'||k==='W'||k===',')setBlank(blankMode==='w'?'':'w');else setBlank('');return}
@@ -887,6 +1061,7 @@ addEventListener('keydown',e=>{
     case 'd':case 'D':stop();setDraw(!drawOn);return;
     case 'c':case 'C':if(clearPage())stop();return;
     case 'm':case 'M':stop();setRm(true);return;
+    case 'e':case 'E':stop();setEd(true);return;
     case 'o':case 'O':if(!nativeO){stop();setOv(true)}return;
     case '?':stop();setHelp(true);return;
     case 'Escape':if(overview())return;if(drawOn){stop();setDraw(false)}else if(laserOn){stop();setLaser(false)}return;
@@ -895,10 +1070,10 @@ addEventListener('keydown',e=>{
 
 /* 翻页、进出总览时换上对应页的批注；已配对时把页码同步给手机 */
 let state='',sent='';
-setInterval(()=>{if(drawOn&&overview())setDraw(false);const s=page()+'|'+overview();if(s!==state){state=s;cur=null;rcur=null;redraw()}
+setInterval(()=>{if(drawOn&&overview())setDraw(false);const s=page()+'|'+overview();if(s!==state){state=s;cur=null;rcur=null;redraw();if(edOn){edPg();if(edPanel==='text')fillText()}}
   const r=page()+'|'+blankMode;if(rc&&r!==sent){sent=r;pushState(false)}},200);
 addEventListener('resize',size);size();
-window.deckToolkit={laser:setLaser,draw:setDraw,blank:setBlank,help:setHelp,overview:setOv,remote:setRm,clear:clearPage};
+window.deckToolkit={laser:setLaser,draw:setDraw,blank:setBlank,help:setHelp,overview:setOv,remote:setRm,edit:setEd,save:edSave,clear:clearPage};
 })();
 </script>
 <!-- ═══════════════ END TOOLKIT ═══════════════ -->
