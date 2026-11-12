@@ -3,6 +3,8 @@ release/
 site/media/
 .wrangler/
 node_modules/
+work/
+outputs/
 __pycache__/
 *.pyc
 .DS_Store

@@ -20,9 +20,9 @@
 
 **两组宫格，一支 24 秒完整视频。** 前 12 秒展示 01—15 套，后 12 秒展示 16—30 套，呈现真实的转场、图表动画、Canvas 绘制与参数联动。
 
-[![30 套模板 · 24 秒完整动态宫格预览](docs/media/lanshu-showcase-v2.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v2.mp4)
+[![30 套模板 · 24 秒完整动态宫格预览](docs/media/lanshu-showcase-v2.gif)](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v3.mp4)
 
-**[观看 1920×864 高清视频 ↗](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v2.mp4)** · **[在线循环预览 ↗](https://ppt.lanshuagent.com/)**
+**[观看 1920×864 高清视频 ↗](https://ppt.lanshuagent.com/media/lanshu-templates-showcase-v3.mp4)** · **[在线循环预览 ↗](https://ppt.lanshuagent.com/)**
 
 动图预览随仓库和下载包一起提供。在线首页支持静音循环与暂停，鼠标移到模板卡片上还能单独预览每一套。高清视频和 30 段卡片预览不进入版本库，可通过 `python3 scripts/fetch_previews.py` 按 [preview-media.json](preview-media.json) 从站点校验下载；`scripts/deploy.py` 发布前会先执行这一步。
 
@@ -49,6 +49,13 @@
 - **浏览器里直接改稿**：按 `E` 进入编辑，点文字就能改；讲稿、标题、全套替换和主题色都在侧边面板里，改完另存为新文件。联网时用 `scripts/embed_fonts.py` 为新写的字补全内嵌字体。
 - **Skill 与工具一起交付**：选型目录、创作规则、模板复制、静态校验和安全安装器均包含在完整包中。
 - **可重复构建和部署**：标准库 Python 脚本构建静态站点和 ZIP，Cloudflare Workers Static Assets 托管全部模板。
+
+### 本次更新
+
+- 新增 21–30 号共 10 套模板，模板库扩展到 30 套、338 页。
+- 首页加入 72 秒新功能介绍，开头两页动态宫格，每页 5 套，并演示浏览器改稿。
+- 新增“新增 10 套”筛选和新增标记；全部 30 套支持卡片悬停动态预览。
+- 按 `E` 直接改文字、讲稿和主题色，改完另存为 HTML；手机遥控与完整放映工具见使用指南。
 
 ## 直接使用模板
 
