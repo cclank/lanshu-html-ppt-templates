@@ -146,11 +146,7 @@
         9
       ],
       "13-cinematic": [
-        1,
-        3,
-        5,
-        7,
-        9
+        1
       ],
       "14-live-model": [
         1,
@@ -167,32 +163,16 @@
         9
       ],
       "16-spatial": [
-        1,
-        3,
-        5,
-        7,
-        9
+        1
       ],
       "17-terminal": [
-        1,
-        3,
-        5,
-        7,
-        9
+        1
       ],
       "18-riso": [
-        1,
-        3,
-        5,
-        7,
-        9
+        1
       ],
       "19-collage": [
-        1,
-        3,
-        5,
-        7,
-        9
+        1
       ],
       "20-globe": [
         1,
@@ -268,14 +248,14 @@
     {
       "file": "lanshu-templates-showcase-v3.jpg",
       "kind": "poster",
-      "bytes": 270006,
-      "sha256": "d88c11eaaa25fe2730f2e8f8ffc97ed153afddf8d2574bb8f8334696718c39e9"
+      "bytes": 269967,
+      "sha256": "2bff1846e3bf9956c88cfef2c32dd30975b2969491edf0502b3f584bfdb63275"
     },
     {
       "file": "lanshu-templates-showcase-v3.mp4",
       "kind": "video",
-      "bytes": 7351138,
-      "sha256": "4f2bbe9b19973f51a6a1778f0ae9e865e16021c82a71f32fe6f4de7d789bbfdf"
+      "bytes": 6906257,
+      "sha256": "8b9f95937c54e9fc9407f05c706fac824c55a12f8d199a29e83c64c5fa1a4b91"
     },
     {
       "file": "preview-01-swiss-v2.mp4",
@@ -352,8 +332,8 @@
     {
       "file": "preview-13-cinematic-v2.mp4",
       "kind": "hover-preview",
-      "bytes": 891202,
-      "sha256": "e8d1f6926b671581c46c1a80a95494c641a70ce93bd447b8b4eb118c790e7eb2"
+      "bytes": 676192,
+      "sha256": "efea78bb3a0f8d342380a878921db44e0521c896d9e4029d066618128cc9359f"
     },
     {
       "file": "preview-14-live-model-v2.mp4",
@@ -370,26 +350,26 @@
     {
       "file": "preview-16-spatial-v2.mp4",
       "kind": "hover-preview",
-      "bytes": 583674,
-      "sha256": "211d1ee3339c836588b5da738cf032bf67b90852c81a6712bb5b04345fcbf35c"
+      "bytes": 119003,
+      "sha256": "9245de3af9f0bf4ddbfe904e1ea71d5b85789966fae05cdaf5eb8aa587d314c6"
     },
     {
       "file": "preview-17-terminal-v2.mp4",
       "kind": "hover-preview",
-      "bytes": 53794,
-      "sha256": "daa549c834b7137f6cedc277cce38a00ef5faa84be534a43a8ff9d1b469fa0c1"
+      "bytes": 52435,
+      "sha256": "8697b95e6b9790f292f6ab8b7de7dfd9f497c85c611de5a47a472197d4072d11"
     },
     {
       "file": "preview-18-riso-v2.mp4",
       "kind": "hover-preview",
-      "bytes": 591277,
-      "sha256": "cd0e049f9383b3aa6caa4f3ab5c41ed54573efd35eedf37262dadd8ca7578f24"
+      "bytes": 258757,
+      "sha256": "a921109377a58cfb508b2912757260a05406743a8fd78fc2366da11a4b4d0bde"
     },
     {
       "file": "preview-19-collage-v2.mp4",
       "kind": "hover-preview",
-      "bytes": 877336,
-      "sha256": "56c9725f5f03517431e1e2aea135623cff5b17b19ff7a387b1367e46f91bc7e2"
+      "bytes": 130040,
+      "sha256": "b354d7661957bc0364d032bbe4cbbd1261b1d47464aa9925b681e98d9aea8579"
     },
     {
       "file": "preview-20-globe-v2.mp4",
