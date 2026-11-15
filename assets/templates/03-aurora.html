@@ -1027,6 +1027,12 @@ window.deck={go:i=>go(i-1),next,prev,overview};
 .tk-ui{font:500 15px/1.45 system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:#F2F2F4;-webkit-font-smoothing:antialiased;letter-spacing:0;text-transform:none}
 .tk-ui kbd{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 8px;border-radius:7px;background:#2C2D33;border:1px solid #44454D;border-bottom-width:2px;font:600 14px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#F2F2F4}
 .tk-ui code{padding:2px 6px;border-radius:5px;background:#2C2D33;font:500 14px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+#tk-launch{position:fixed;top:16px;right:16px;z-index:2147483260;padding:8px 12px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(24,24,28,.88);color:#F2F2F4;cursor:pointer;opacity:.8;backdrop-filter:blur(10px)}
+#tk-launch:hover,#tk-launch:focus-visible{opacity:1;outline:2px solid #7DD3FC;outline-offset:3px}
+body.tk-editing #tk-launch,body.tk-blanked #tk-launch{display:none}
+#tk-help .intro{margin:-6px 0 18px;color:#A1A2AB}
+#tk-help .tk-key{display:inline-flex;padding:0;border:0;border-radius:7px;background:none;color:inherit;cursor:pointer}
+#tk-help .tk-key:hover kbd,#tk-help .tk-key:focus-visible kbd{background:#41444D;border-color:#7DD3FC;color:#fff}
 #tk-bar{position:fixed;left:50%;bottom:28px;translate:-50% 0;z-index:2147483100;display:none;align-items:center;gap:6px;padding:8px 10px;border-radius:16px;background:rgba(24,24,28,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 44px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.08)}
 #tk-bar.on{display:flex}
 #tk-bar .sw{width:30px;height:30px;padding:0;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer}
@@ -1107,7 +1113,7 @@ body.tk-editing [data-tk-dirty]:not(:focus){outline:2px dotted rgba(52,199,89,.9
 body.tk-editing.idle,body.tk-editing.idle *{cursor:auto!important}
 body.tk-editing.idle [data-tk-ed]{cursor:text!important}
 body.tk-editing #tk-toast,body.tk-editing #tk-jump{top:76px}
-@media print{#tk-ink,#tk-laser,#tk-blank,#tk-bar,#tk-jump,#tk-toast,#tk-help,#tk-rm,#tk-ov,#tk-ed-bar,#tk-ed-panel,#tk-ed-pick,.tk-hk{display:none!important}body.tk-editing [data-tk-ed]{outline:none!important}}
+@media print{#tk-launch,#tk-ink,#tk-laser,#tk-blank,#tk-bar,#tk-jump,#tk-toast,#tk-help,#tk-rm,#tk-ov,#tk-ed-bar,#tk-ed-panel,#tk-ed-pick,.tk-hk{display:none!important}body.tk-editing [data-tk-ed]{outline:none!important}}
 </style>
 <script>
 (()=>{
@@ -1129,6 +1135,13 @@ const dpr=()=>Math.min(2,devicePixelRatio||1);
 const page=()=>{const n=parseInt(location.hash.slice(1),10);return isNaN(n)?1:n};
 const total=()=>(window.deck&&window.deck.n)||d.querySelectorAll('.slide').length||0;
 const goTo=n=>{if(window.deck&&window.deck.go)window.deck.go(n);else location.hash='#'+n};
+/* 中文输入法可能把字母键报告为 Process；只在非输入区域还原放映快捷键。 */
+const shortcutKey=e=>{
+  if(!['Process','Unidentified','Dead'].includes(e.key))return e.key;
+  if(/^Key[A-Z]$/.test(e.code))return e.code.slice(3).toLowerCase();
+  if(e.code==='Slash'&&e.shiftKey)return '?';
+  return e.key;
+};
 /* 版心：与各套的 1920×1080 舞台一致，批注按版心坐标保存，窗口缩放后仍对得上 */
 const box=()=>{const s=Math.min(innerWidth/1920,innerHeight/1080);return{s,x:(innerWidth-1920*s)/2,y:(innerHeight-1080*s)/2}};
 let ovOn=false;
@@ -1207,7 +1220,7 @@ function setLaser(on){if(on===laserOn)return;laserOn=on;if(on)setDraw(false);b.c
 
 /* ── 黑屏 / 白屏 ── */
 const blank=mk('div','tk-blank');let blankMode='';
-const setBlank=m=>{blankMode=m;blank.className=m};
+const setBlank=m=>{blankMode=m;blank.className=m;b.classList.toggle('tk-blanked',!!m)};
 blank.addEventListener('click',e=>{e.stopPropagation();setBlank('')});
 for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick'])blank.addEventListener(t,swallow);
 
@@ -1420,8 +1433,12 @@ async function edSave(){const a=d.activeElement;if(a&&a.blur)a.blur();
 
 /* ── 快捷键面板 ── */
 const help=mk('div','tk-help','tk-ui');let helpOn=false;
+const launch=mk('button','tk-launch','tk-ui');launch.type='button';launch.textContent='放映工具 · ?';launch.setAttribute('aria-controls','tk-help');launch.setAttribute('aria-expanded','false');
+for(const t of ['click','pointerdown','mousedown','touchstart','touchend','dblclick'])launch.addEventListener(t,swallow);
+launch.addEventListener('click',()=>setHelp(!helpOn));
 const extra=deckHint.split('·').map(s=>s.trim()).filter(s=>s&&!/^(← →|F |O |S |⌘|\?)/.test(s));
-const K=(...ks)=>ks.map(k=>`<kbd>${k}</kbd>`).join('');
+const actions={'←':['ArrowLeft','上一页'],'→':['ArrowRight','下一页'],Home:['Home','第一页'],End:['End','最后一页'],O:['o','总览'],F:['f','全屏'],S:['s','演讲者视图'],B:['b','黑屏'],W:['w','白屏'],L:['l','激光笔'],D:['d','画笔批注'],C:['c','清除批注'],M:['m','手机遥控'],E:['e','编辑与换色']};
+const K=(...ks)=>ks.map(k=>actions[k]?`<button type="button" class="tk-key" data-key="${actions[k][0]}" aria-label="${actions[k][1]} ${k}" title="点击${actions[k][1]}"><kbd>${k}</kbd></button>`:`<kbd>${k}</kbd>`).join('');
 const rows=[
   ['翻页',K('←','→')+'<em>或 空格 · PageUp / PageDown · 翻页笔</em>'],
   ['跳到某页',K('3')+K('Enter')+'<em>输入页码后回车</em>'],
@@ -1436,15 +1453,15 @@ const rows=[
   ['编辑与换色',K('E')+'<em>直接改文字和讲稿 · 全套替换 · 换主题色，另存为新文件</em>'],
   ['导出 PDF',K('⌘ / Ctrl')+K('P')],
 ];
-help.innerHTML=`<div class="p"><h3>放映快捷键</h3><dl>${rows.map(([a,c])=>`<dt>${a}</dt><dd>${c}</dd>`).join('')}</dl>`+
-  (extra.length?`<p class="x">本套还可以：<b>${extra.join('　·　')}</b></p>`:'')+`<p class="x" style="border:0;padding:0;margin-top:12px">按任意键或点击关闭</p></div>`;
-const setHelp=on=>{helpOn=on;help.classList.toggle('on',on)};
-help.addEventListener('click',e=>{e.stopPropagation();setHelp(false)});
+help.innerHTML=`<div class="p"><h3>放映快捷键</h3><p class="intro">点击下面的按键也能操作。使用键盘前先点一下放映画面；文字输入时暂停快捷键。S 首次使用需允许本页弹窗，M 需本地放映服务。</p><dl>${rows.map(([a,c])=>`<dt>${a}</dt><dd>${c}</dd>`).join('')}</dl>`+
+  (extra.length?`<p class="x">本套还可以：<b>${extra.join('　·　')}</b></p>`:'')+`<p class="x" style="border:0;padding:0;margin-top:12px">按任意键或点击空白处关闭</p></div>`;
+const setHelp=on=>{helpOn=on;help.classList.toggle('on',on);launch.setAttribute('aria-expanded',String(on))};
+help.addEventListener('click',e=>{e.stopPropagation();const k=e.target.closest('[data-key]')?.dataset.key;setHelp(false);if(k)d.dispatchEvent(new KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}))});
 for(const t of ['pointerdown','mousedown','touchstart','touchend','dblclick','wheel'])help.addEventListener(t,swallow,{passive:true});
 
 /* ── 按键：捕获阶段处理，先于各套自己的翻页逻辑 ── */
 addEventListener('keydown',e=>{
-  const t=e.target,k=e.key,stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
+  const t=e.target,k=shortcutKey(e),stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
   if(edOn&&(e.ctrlKey||e.metaKey)&&!e.altKey&&(k==='s'||k==='S')){stop();edSave();return}
   if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))){
     /* 改文字、填面板时按键只给输入框，不让各套拿去翻页 */
@@ -1474,7 +1491,8 @@ addEventListener('keydown',e=>{
     case 'c':case 'C':if(clearPage())stop();return;
     case 'm':case 'M':stop();setRm(true);return;
     case 'e':case 'E':stop();setEd(true);return;
-    case 'o':case 'O':if(!nativeO){stop();setOv(true)}return;
+    case 'o':case 'O':if(!nativeO){stop();setOv(true)}else if(k!==e.key){stop();d.dispatchEvent(new KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}))}return;
+    case 'f':case 'F':if(k!==e.key){stop();d.dispatchEvent(new KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}))}return;
     case '?':stop();setHelp(true);return;
     case 'Escape':if(overview())return;if(drawOn){stop();setDraw(false)}else if(laserOn){stop();setLaser(false)}return;
   }
@@ -1485,7 +1503,7 @@ let state='',sent='';
 setInterval(()=>{if(drawOn&&overview())setDraw(false);const s=page()+'|'+overview();if(s!==state){state=s;cur=null;rcur=null;redraw();if(edOn){edPg();if(edPanel==='text')fillText()}}
   const r=page()+'|'+blankMode;if(rc&&r!==sent){sent=r;pushState(false)}},200);
 addEventListener('resize',size);size();
-window.deckToolkit={laser:setLaser,draw:setDraw,blank:setBlank,help:setHelp,overview:setOv,remote:setRm,edit:setEd,save:edSave,clear:clearPage};
+window.deckToolkit={laser:setLaser,draw:setDraw,blank:setBlank,help:setHelp,overview:setOv,remote:setRm,edit:setEd,save:edSave,clear:clearPage,key:shortcutKey};
 })();
 </script>
 <!-- ═══════════════ END TOOLKIT ═══════════════ -->
@@ -1515,7 +1533,8 @@ function open(){
 addEventListener('keydown',e=>{
   if(e.metaKey||e.ctrlKey||e.altKey)return;
   const t=e.target;if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;
-  if(e.key==='s'||e.key==='S'){e.preventDefault();e.stopImmediatePropagation();open()}
+  const k=window.deckToolkit?.key(e)||e.key;
+  if(k==='s'||k==='S'){e.preventDefault();e.stopImmediatePropagation();open()}
 },true);
 window.deckPresenter={open,notes:NOTES};
 

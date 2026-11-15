@@ -7,7 +7,7 @@
 [![New Code License](https://img.shields.io/badge/New_Code-MIT-22C55E?style=flat-square)](LICENSE)
 [![Templates](https://img.shields.io/badge/Templates-30-4C8BF5?style=flat-square)](#模板目录)
 [![Slides](https://img.shields.io/badge/Example_Slides-338-8B5CF6?style=flat-square)](#模板目录)
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.3.0-111827?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v1.3.1-111827?style=flat-square)](SKILL.md)
 [![HTML5](https://img.shields.io/badge/HTML5-Offline_Ready-E34F26?style=flat-square&logo=html5&logoColor=white)](#直接使用模板)
 [![Cloudflare](https://img.shields.io/badge/Hosted_on-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)](#cloudflare-部署)
 [![Follow Lanshu on X](https://img.shields.io/badge/Follow-%40LufzzLiz-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/LufzzLiz)
@@ -52,6 +52,7 @@
 
 ### 本次更新
 
+- 修复输入法返回特殊按键值时的放映快捷键识别；每套模板右上角新增“放映工具”，可点击使用激光笔、画笔、演讲者视图等功能。
 - 新增 21–30 号共 10 套模板，模板库扩展到 30 套、338 页。
 - 首页加入 72 秒新功能介绍，开头两页动态宫格，每页 5 套，并演示浏览器改稿。
 - 新增“新增 10 套”筛选和新增标记；全部 30 套支持卡片悬停动态预览。
@@ -62,6 +63,8 @@
 1. 打开 [在线模板目录](https://ppt.lanshuagent.com/)，选择适合的风格。
 2. 点击封面放映，或点击“下载 HTML”保存单文件。
 3. 使用文本编辑器或 AI 助手改写页面内容和演讲备注，再用浏览器打开。
+
+打开模板后，右上角的“放映工具”可直接点击操作；使用键盘前先点击放映画面，让页面获得焦点。输入文字时暂停快捷键。按 `L` 后移动鼠标可看到激光点；`S` 会另开演讲者窗口，首次使用需允许本页弹窗。官网直接放映支持上述工具；`M` 手机遥控需要运行本地放映服务。
 
 完整包中的原始模板位于 `assets/templates/`，封面预览位于 `assets/thumbs/`。下载到本地的模板可离线放映。
 

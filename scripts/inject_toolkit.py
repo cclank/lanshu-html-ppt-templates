@@ -18,6 +18,8 @@ OLD = re.compile(r'<!-- ═+ TOOLKIT v\d.*?<!-- ═+ END TOOLKIT ═+ -->\n?', r
 PRESENTER = '<!-- ═══════════════ PRESENTER v1'
 # Presenter window patches: (original, replacement); skipped when already applied.
 PATCHES = [
+    ("if(e.key==='s'||e.key==='S'){e.preventDefault();e.stopImmediatePropagation();open()}",
+     "const k=window.deckToolkit?.key(e)||e.key;\n  if(k==='s'||k==='S'){e.preventDefault();e.stopImmediatePropagation();open()}"),
     ("Home:'Home',End:'End'};",
      "Home:'Home',End:'End',b:'b',B:'b','.':'b',w:'w',W:'w',',':'w'};"),
     ('<button class="nx" id="bn">下一页 ›</button></div>',

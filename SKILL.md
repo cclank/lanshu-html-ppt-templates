@@ -3,7 +3,7 @@ name: lanshu-html-ppt-templates
 description: 基于 30 套岚叔 HTML 演示模板创建、改写和定制演示文稿，支持商务汇报、政企汇报、路演、发布会、学术答辩、教学课件、数据叙事与交互演示。用户需要 HTML 幻灯片、网页 PPT 或使用这些模板制作演示时使用。
 metadata:
   author: Lanshu
-  version: "1.3.0"
+  version: "1.3.1"
 ---
 
 # 岚叔 HTML 演示模板
